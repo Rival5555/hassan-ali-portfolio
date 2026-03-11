@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -27,8 +28,15 @@ const About = () => {
       <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] md:items-center">
         <div className="relative flex justify-center md:justify-start">
           <div className="relative h-40 w-40 overflow-hidden rounded-3xl border border-blue-500/40 bg-gradient-to-br from-blue-500/50 via-purple-500/40 to-transparent p-[2px] shadow-xl shadow-blue-500/40 sm:h-48 sm:w-48">
-            <div className="flex h-full w-full items-center justify-center rounded-3xl bg-zinc-950/80">
-              <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 opacity-80 blur-sm" />
+            <div className="relative h-full w-full overflow-hidden rounded-3xl bg-zinc-950/80">
+              <Image
+                src="/hassan-portrait.jpg"
+                alt="Hassan Ali portrait"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 768px) 12rem, 10rem"
+              />
             </div>
           </div>
           <div className="pointer-events-none absolute -bottom-4 -right-4 hidden h-20 w-20 rounded-2xl border border-dashed border-purple-500/40 md:block" />
