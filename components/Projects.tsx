@@ -50,7 +50,7 @@ const Projects = () => {
       <div className="space-y-3">
         <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           Featured{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
             Projects
           </span>
         </h2>
@@ -70,7 +70,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xl shadow-blue-500/15 backdrop-blur-xl transition-transform duration-300 hover:-translate-y-2"
+            className="group flex flex-col rounded-2xl border border-white/5 bg-[#0D1117] p-5 shadow-[0_0_20px_rgba(20,184,166,0.05)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(20,184,166,0.15)]"
           >
             <div className="relative mb-3 flex-1 space-y-2">
               <h3 className="text-lg font-semibold text-white">
@@ -85,7 +85,7 @@ const Projects = () => {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-zinc-700/80 bg-zinc-900/80 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-zinc-300 transition group-hover:border-blue-500 group-hover:text-white"
+                  className="rounded-full border border-teal-500/20 bg-[#010409]/80 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-zinc-300 transition group-hover:border-teal-400 group-hover:text-white"
                 >
                   {tag}
                 </span>
@@ -97,7 +97,7 @@ const Projects = () => {
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 rounded-full border border-zinc-700 bg-zinc-950/70 px-3 py-2 text-center text-xs font-semibold text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900"
+                className="flex-1 rounded-full border border-zinc-700 bg-[#010409]/80 px-3 py-2 text-center text-xs font-semibold text-zinc-100 transition hover:border-teal-500 hover:bg-[#010409]"
               >
                 GitHub
               </a>
@@ -105,7 +105,7 @@ const Projects = () => {
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-3 py-2 text-center text-xs font-semibold text-white shadow-md shadow-blue-500/30 transition hover:shadow-purple-500/40"
+                className="flex-1 rounded-full bg-gradient-to-r from-teal-500 to-blue-600 px-3 py-2 text-center text-xs font-semibold text-white shadow-md shadow-teal-500/30 transition hover:shadow-blue-500/40"
               >
                 Live Demo
               </a>
