@@ -15,7 +15,7 @@ const Footer = () => {
         </p>
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/"
+            href="https://github.com/Rival5555"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-zinc-700/80 bg-zinc-950/70 p-1.5 text-zinc-300 transition hover:border-blue-500 hover:text-white"
@@ -23,7 +23,7 @@ const Footer = () => {
             <Github className="h-3.5 w-3.5" />
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/hasanali09"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-zinc-700/80 bg-zinc-950/70 p-1.5 text-zinc-300 transition hover:border-blue-500 hover:text-white"
