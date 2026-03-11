@@ -112,7 +112,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://github.com/"
+              href="https://github.com/Rival5555"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-zinc-950/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900"
@@ -121,7 +121,7 @@ const Contact = () => {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/hasanali09"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-zinc-950/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900"
