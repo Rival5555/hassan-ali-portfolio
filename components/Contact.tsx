@@ -53,6 +53,7 @@ const Contact = () => {
                 name="name"
                 type="text"
                 placeholder="Your name"
+                suppressHydrationWarning
                 className="w-full rounded-xl border border-zinc-700/80 bg-zinc-950/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500/60"
               />
             </div>
@@ -68,6 +69,7 @@ const Contact = () => {
                 name="email"
                 type="email"
                 placeholder="you@example.com"
+                suppressHydrationWarning
                 className="w-full rounded-xl border border-zinc-700/80 bg-zinc-950/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500/60"
               />
             </div>
@@ -85,6 +87,7 @@ const Contact = () => {
               name="message"
               rows={4}
               placeholder="Tell me a bit about what you're working on..."
+              suppressHydrationWarning
               className="w-full rounded-xl border border-zinc-700/80 bg-zinc-950/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500/60"
             />
           </div>
