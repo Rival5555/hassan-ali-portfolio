@@ -16,7 +16,7 @@ const About = () => {
       <div className="space-y-3">
         <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           About{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
             Me
           </span>
         </h2>
@@ -27,7 +27,7 @@ const About = () => {
 
       <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] md:items-center">
         <div className="relative flex justify-center md:justify-start">
-          <div className="relative h-40 w-40 overflow-hidden rounded-3xl border border-blue-500/40 bg-gradient-to-br from-blue-500/50 via-purple-500/40 to-transparent p-[2px] shadow-xl shadow-blue-500/40 sm:h-48 sm:w-48">
+          <div className="relative h-40 w-40 overflow-hidden rounded-3xl border border-teal-500/40 bg-gradient-to-br from-teal-500/50 via-blue-500/40 to-transparent p-[2px] shadow-[0_0_30px_rgba(20,184,166,0.2)] sm:h-48 sm:w-48">
             <div className="relative h-full w-full overflow-hidden rounded-3xl bg-zinc-950/80">
               <Image
                 src="/hassan-portrait.jpg"
@@ -39,42 +39,45 @@ const About = () => {
               />
             </div>
           </div>
-          <div className="pointer-events-none absolute -bottom-4 -right-4 hidden h-20 w-20 rounded-2xl border border-dashed border-purple-500/40 md:block" />
+          <div className="pointer-events-none absolute -bottom-4 -right-4 hidden h-20 w-20 rounded-2xl border border-dashed border-blue-500/40 md:block" />
         </div>
 
         <div className="space-y-4 text-zinc-300">
           <p>
-            I&apos;m Hassan, a developer with{" "}
-            <span className="font-semibold text-white">
-              2 years of hands-on experience
-            </span>{" "}
-            working across Machine Learning, Deep Learning, IoT systems, and
-            Frontend Development.
+            I am an aspiring{" "}
+            <span className="font-semibold text-white">AI Engineer</span> with a
+            strong foundation in machine learning, deep learning, and modern AI
+            frameworks. My primary focus lies in{" "}
+            <span className="text-white">MLOps and model deployment</span> —
+            bridging the gap between experimental models and production-ready
+            systems through scalable, reliable, and efficient pipelines.
           </p>
           <p>
-            I enjoy building{" "}
+            I am passionate about building{" "}
             <span className="font-semibold text-white">
-              end-to-end intelligent systems
-            </span>{" "}
-            — from experimenting with models, training and optimizing them, to
-            deploying solutions on{" "}
-            <span className="text-white">edge devices like ESP32</span> and
-            connecting everything through scalable cloud backends.
+              end-to-end AI workflows
+            </span>
+            , from data preprocessing and model training to containerisation,
+            CI/CD integration, and cloud deployment. I have hands-on experience
+            deploying models using <span className="text-white">FastAPI</span>{" "}
+            for building robust, high-performance REST APIs and{" "}
+            <span className="text-white">AWS SageMaker</span> for scalable
+            cloud-based model training and inference. I further leverage tools
+            such as Docker, Kubernetes, and MLflow to ensure models deliver
+            real-world value beyond the notebook.
           </p>
           <p>
-            On the frontend, I focus on{" "}
-            <span className="text-white">
-              clean, modern, and responsive interfaces
-            </span>{" "}
-            using React and Next.js, with extra attention to performance,
-            animations, and developer experience.
+            As a fresher, I bring a{" "}
+            <span className="text-white">growth-oriented mindset</span>, a
+            commitment to engineering best practices, and a keen interest in
+            keeping pace with the rapidly evolving AI landscape.
           </p>
           <p>
-            I&apos;m always looking for opportunities where{" "}
+            I am actively seeking opportunities where I can contribute to{" "}
             <span className="font-semibold text-white">
-              AI, IoT, and web
+              impactful AI projects
             </span>{" "}
-            come together to solve real-world problems.
+            and grow within a collaborative, forward-thinking team.
           </p>
         </div>
       </div>
