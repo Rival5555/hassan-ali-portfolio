@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const roles = [
-  "Machine Learning Engineer",
-  "Deep Learning Developer",
-  "IoT Engineer",
-  "React.js Developer",
+  "AI Engineer",
+  "MLOps Specialist",
+  "Model Deployment Expert",
 ];
 
 const Hero = () => {
@@ -51,18 +50,18 @@ const Hero = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.6 }}
-      className="relative flex min-h-[70vh] flex-col justify-center overflow-hidden"
+      className="relative flex min-h-[calc(100vh-72px)] flex-col justify-center overflow-hidden py-10 md:py-0"
     >
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/30 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-purple-500/30 blur-3xl" />
+        <div className="absolute -top-32 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-teal-900/10 blur-[100px]" />
+        <div className="absolute -bottom-32 right-0 h-[500px] w-[500px] rounded-full bg-indigo-900/10 blur-[100px]" />
       </div>
 
       <div className="relative grid gap-10 md:grid-cols-[minmax(0,1.25fr)_minmax(0,0.95fr)] md:items-center">
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1 text-xs font-medium text-blue-200 backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            <span>Machine Learning Engineer · IoT · React</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-teal-500/10 px-4 py-1 text-xs font-medium text-teal-200 backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-teal-400" />
+            <span>AI Engineer · MLOps · Cloud</span>
           </div>
 
           <div className="space-y-4">
@@ -73,11 +72,11 @@ const Hero = () => {
               viewport={{ once: true }}
               className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Hi, I&apos;m{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Hassan
+              Building Intelligent Systems.{" "}
+              <br className="hidden lg:block" />
+              <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                Deploying Real-World AI.
               </span>
-              , I build intelligent systems.
             </motion.h1>
 
             <motion.p
@@ -87,10 +86,10 @@ const Hero = () => {
               viewport={{ once: true }}
               className="text-lg font-medium text-zinc-200 sm:text-xl"
             >
-              <span className="text-zinc-400">I specialize in</span>{" "}
-              <span className="inline-block min-h-[1.5em] bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold text-transparent">
+              <span className="text-zinc-400">I specialize as an</span>{" "}
+              <span className="inline-block min-h-[1.5em] bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text font-semibold text-transparent">
                 {displayText}
-                <span className="ml-0.5 inline-block h-5 w-[2px] animate-pulse bg-blue-400 align-middle" />
+                <span className="ml-0.5 inline-block h-5 w-[2px] animate-pulse bg-teal-400 align-middle" />
               </span>
             </motion.p>
           </div>
@@ -102,12 +101,13 @@ const Hero = () => {
             viewport={{ once: true }}
             className="max-w-2xl text-base text-zinc-400 sm:text-lg"
           >
-            2 years of experience taking models from{" "}
-            <span className="text-zinc-200">research to production</span> —
-            from training CNNs and fine-tuning LLMs, to deploying{" "}
-            <span className="text-zinc-200">edge AI on ESP32</span> and
-            delivering real-time insights through{" "}
-            <span className="text-zinc-200">Next.js dashboards</span>.
+            I bridge the gap between experimental models and production-ready
+            systems. With deep expertise in{" "}
+            <span className="text-zinc-200">MLOps</span>, I leverage tools like{" "}
+            <span className="text-zinc-200">FastAPI</span> and{" "}
+            <span className="text-zinc-200">AWS SageMaker</span> to construct
+            efficient pipelines that ensure AI solutions deliver reliable,
+            real-world value.
           </motion.p>
 
           <motion.div
@@ -119,15 +119,15 @@ const Hero = () => {
           >
             <button
               onClick={handleScrollToProjects}
-              className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 transition hover:shadow-purple-500/40"
+              className="rounded-full bg-gradient-to-r from-teal-500 to-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:shadow-blue-500/40"
             >
-              View Projects
+              View My Projects
             </button>
             <a
               href="/Hassan-Ali-Resume.pdf"
-              className="rounded-full border border-zinc-700 bg-zinc-900/60 px-6 py-2.5 text-sm font-semibold text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900/90"
+              className="rounded-full border border-zinc-700 bg-zinc-900/60 px-6 py-2.5 text-sm font-semibold text-zinc-100 transition hover:border-teal-500 hover:bg-zinc-900/90"
             >
-              Download CV
+              Download Resume
             </a>
           </motion.div>
 
@@ -140,13 +140,13 @@ const Hero = () => {
           >
             {[
               "Python",
-              "TensorFlow",
-              "Keras",
-              "LLMs",
-              "ESP32",
-              "Firebase",
+              "PyTorch",
+              "FastAPI",
               "Docker",
-              "Next.js",
+              "AWS SageMaker",
+              "MLflow",
+              "CI/CD",
+              "Kubernetes",
             ].map((tech) => (
               <span
                 key={tech}
@@ -165,56 +165,56 @@ const Hero = () => {
           viewport={{ once: true }}
           className="hidden md:block"
         >
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-950/90 via-zinc-950/70 to-zinc-900/80 p-4 shadow-2xl shadow-blue-500/40 backdrop-blur-xl">
-            <div className="mb-3 flex items-center justify-between text-xs text-zinc-400">
-              <span className="inline-flex items-center gap-1">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                training.py · gpu:0
+          <div className="relative rounded-3xl border border-white/5 bg-[#0D1117] p-5 shadow-2xl shadow-teal-500/10">
+            <div className="mb-6 flex items-center justify-between text-xs text-zinc-400">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-teal-400" />
+                deploy_pipeline.py · aws
               </span>
-              <span className="rounded-full bg-zinc-900/80 px-2 py-0.5 text-[10px] uppercase tracking-wide text-emerald-300">
-                live metrics
+              <span className="rounded-full bg-teal-500/10 px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-teal-400">
+                ACTIVE
               </span>
             </div>
 
-            <div className="space-y-2 rounded-2xl bg-zinc-950/80 p-3 font-mono text-[11px] text-zinc-300">
+            <div className="space-y-3.5 rounded-2xl bg-[#010409]/60 p-4 font-mono text-[11px] leading-relaxed text-zinc-300">
               <p>
-                {">"} model: CNN (resnet18) · dataset: retinal\_fundus
+                <span className="text-zinc-500">{">"}</span> endpoint: <span className="text-teal-400">sagemaker-inference-v1</span>
               </p>
               <p>
-                {">"} epoch <span className="text-emerald-300">42</span> / 50 ·
-                lr=1e-4
+                <span className="text-zinc-500">{">"}</span> state: <span className="text-teal-400">InService</span> ·
+                latency: 42ms
               </p>
               <p>
-                {">"} val\_accuracy:{" "}
-                <span className="text-emerald-300">97.4%</span> · loss:{" "}
-                <span className="text-red-300">0.13</span>
+                <span className="text-zinc-500">{">"}</span> fast_api_status:{" "}
+                <span className="text-teal-400">200 OK</span> · requests/s:{" "}
+                <span className="text-blue-400">1,240</span>
               </p>
               <p>
-                {">"} deployment:{" "}
-                <span className="text-sky-300">edge · ESP32 · MQTT</span>
+                <span className="text-zinc-500">{">"}</span> latest_run:{" "}
+                <span className="text-zinc-400">MLflow Run ID: a92b3...</span>
               </p>
             </div>
 
-            <div className="mt-3 grid grid-cols-3 gap-2 text-[11px] text-zinc-300">
-              <div className="rounded-2xl border border-blue-500/40 bg-blue-500/10 p-2">
-                <p className="text-[10px] uppercase tracking-wide text-blue-200">
-                  Experience
+            <div className="mt-4 grid grid-cols-3 gap-3 text-[11px] text-zinc-300">
+              <div className="rounded-xl border border-teal-500/30 bg-teal-500/5 p-3 transition-colors hover:bg-teal-500/10">
+                <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-teal-100/70">
+                  FOCUS
                 </p>
-                <p className="text-sm font-semibold text-white">2+ years</p>
+                <p className="text-[13px] font-bold text-white">MLOps</p>
               </div>
-              <div className="rounded-2xl border border-purple-500/40 bg-purple-500/10 p-2">
-                <p className="text-[10px] uppercase tracking-wide text-purple-200">
-                  Focus
+              <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-3 transition-colors hover:bg-purple-500/10">
+                <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-purple-100/70">
+                  EXPERTISE
                 </p>
-                <p className="text-sm font-semibold text-white">
+                <p className="text-[13px] font-bold text-white">
                   ML · DL · IoT
                 </p>
               </div>
-              <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-2">
-                <p className="text-[10px] uppercase tracking-wide text-emerald-200">
-                  Status
+              <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 transition-colors hover:bg-emerald-500/10">
+                <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-emerald-100/70">
+                  STATUS
                 </p>
-                <p className="text-sm font-semibold text-emerald-300">
+                <p className="text-[13px] font-bold text-emerald-400">
                   Open to work
                 </p>
               </div>
