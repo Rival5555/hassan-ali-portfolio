@@ -21,7 +21,7 @@ const Contact = () => {
       <div className="space-y-3 text-center md:text-left">
         <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
           Get In{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
             Touch
           </span>
         </h2>
@@ -38,7 +38,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.4 }}
-          className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xl shadow-blue-500/15 backdrop-blur-xl"
+          className="space-y-4 rounded-2xl border border-white/5 bg-[#0D1117] p-5 shadow-[0_0_25px_rgba(20,184,166,0.05)]"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5 text-left">
@@ -54,7 +54,7 @@ const Contact = () => {
                 type="text"
                 placeholder="Your name"
                 suppressHydrationWarning
-                className="w-full rounded-xl border border-zinc-700/80 bg-zinc-950/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500/60"
+                className="w-full rounded-xl border border-zinc-700/80 bg-[#010409]/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-teal-500 focus:ring-1 focus:ring-teal-500/60"
               />
             </div>
             <div className="space-y-1.5 text-left">
@@ -70,7 +70,7 @@ const Contact = () => {
                 type="email"
                 placeholder="you@example.com"
                 suppressHydrationWarning
-                className="w-full rounded-xl border border-zinc-700/80 bg-zinc-950/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500/60"
+                className="w-full rounded-xl border border-zinc-700/80 bg-[#010409]/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-teal-500 focus:ring-1 focus:ring-teal-500/60"
               />
             </div>
           </div>
@@ -88,13 +88,13 @@ const Contact = () => {
               rows={4}
               placeholder="Tell me a bit about what you're working on..."
               suppressHydrationWarning
-              className="w-full rounded-xl border border-zinc-700/80 bg-zinc-950/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500/60"
+              className="w-full rounded-xl border border-zinc-700/80 bg-[#010409]/80 px-3 py-2 text-sm text-zinc-100 outline-none transition focus:border-teal-500 focus:ring-1 focus:ring-teal-500/60"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 transition hover:shadow-purple-500/40"
+            className="w-full rounded-full bg-gradient-to-r from-teal-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_15px_rgba(20,184,166,0.2)] transition hover:shadow-[0_0_20px_rgba(20,184,166,0.4)]"
           >
             Send Message
           </button>
@@ -105,7 +105,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true, amount: 0.4 }}
-          className="space-y-4 rounded-2xl border border-dashed border-zinc-700/80 bg-zinc-900/40 p-5"
+          className="space-y-4 rounded-2xl border border-dashed border-teal-500/20 bg-[#010409]/40 p-5"
         >
           <p className="text-sm text-zinc-300">
             Prefer reaching out directly? Connect with me on these platforms:
@@ -115,7 +115,7 @@ const Contact = () => {
               href="https://github.com/Rival5555"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-zinc-950/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-[#010409]/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-teal-500 hover:bg-[#010409]"
             >
               <Github className="h-4 w-4" />
               GitHub
@@ -124,14 +124,14 @@ const Contact = () => {
               href="https://www.linkedin.com/in/hasanali09"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-zinc-950/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-[#010409]/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-teal-500 hover:bg-[#010409]"
             >
               <Linkedin className="h-4 w-4" />
               LinkedIn
             </a>
             <a
-              href="mailto:you@example.com"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-zinc-950/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-blue-500 hover:bg-zinc-900"
+              href="mailto:hassanali93r@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-[#010409]/70 px-3 py-2 text-xs font-medium text-zinc-100 transition hover:border-teal-500 hover:bg-[#010409]"
             >
               <Mail className="h-4 w-4" />
               Email
