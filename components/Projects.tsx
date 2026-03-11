@@ -16,7 +16,7 @@ const PROJECTS: Project[] = [
     description:
       "Real-time air quality tracking using ESP32 sensors with data synced to Firebase Realtime Database and visualized on a live web dashboard.",
     tags: ["ESP32", "Firebase", "IoT", "Embedded C", "Realtime Database"],
-    github: "#",
+    github: "https://github.com/Rival5555",
     demo: "#",
   },
   {
@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     description:
       "Deep learning model for automated detection and classification of diabetic retinopathy stages from retinal fundus images using CNN architecture.",
     tags: ["Python", "TensorFlow", "CNN", "Medical Imaging", "Deep Learning"],
-    github: "#",
+    github: "https://github.com/Rival5555",
     demo: "#",
   },
   {
@@ -32,7 +32,7 @@ const PROJECTS: Project[] = [
     description:
       "A React.js web application for browsing, managing, and registering for university events with a clean modern UI.",
     tags: ["React.js", "HTML", "CSS", "JavaScript", "Frontend"],
-    github: "#",
+    github: "https://github.com/Rival5555",
     demo: "#",
   },
 ];
