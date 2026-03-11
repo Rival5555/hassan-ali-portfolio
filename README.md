@@ -1,70 +1,114 @@
-## Hassan – Developer Portfolio
+<!-- Banner Image -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00C8FF&height=250&section=header&text=Hassan%20Ali&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20Engineer%20|%20MLOps%20Specialist%20|%20Model%20Deployment%20Expert&descAlignY=55&descAlign=62" alt="Hassan Ali Banner">
+</p>
 
-Modern, production-ready developer portfolio built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.  
-Dark, glassmorphism-inspired UI with neon blue/purple gradients and smooth scroll navigation.
+<!-- Badges -->
+<p align="center">
+  <a href="https://github.com/Rival5555" target="_blank">
+    <img src="https://komarev.com/ghpvc/?username=Rival5555&label=Profile%20Views&color=00ffcc&style=flat" alt="Profile Views" />
+  </a>
+  <img src="https://img.shields.io/badge/Status-Open%20To%20Work-00C8FF?style=flat&logo=github&logoColor=white" alt="Open To Work" />
+</p>
 
-### Tech Stack
+<!-- Social Links -->
+<p align="center">
+  <!-- Add your Portfolio link here -->
+  <a href="#"><img src="https://img.shields.io/badge/Portfolio-%230A0F1E.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/hasanali09"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:hassanali93r@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" /></a>
+  <a href="https://github.com/Rival5555"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+</p>
 
-- **Framework**: Next.js 14 (App Router) + TypeScript
-- **Styling**: Tailwind CSS (dark theme, responsive design)
-- **Animations**: Framer Motion (scroll-based, `whileInView` with `viewport={{ once: true }}`)
-- **Icons**: Lucide React
-- **Fonts**: `next/font` with Google Poppins
+<br>
 
-### Project Structure
+## 🤖 About Me
 
-- `app/layout.tsx` – Global layout, SEO metadata, typography, Navbar + Footer wrapper
-- `app/page.tsx` – Home page composing all sections
-- `components/Navbar.tsx` – Fixed, blurred navbar with smooth scrolling and active link highlight
-- `components/Hero.tsx` – Intro section with typing effect and CTAs
-- `components/About.tsx` – Bio and profile highlight
-- `components/Skills.tsx` – Glassmorphism skill cards with category badges
-- `components/Projects.tsx` – Responsive project grid with GitHub and Live Demo buttons
-- `components/Contact.tsx` – Contact form and social links
-- `components/Footer.tsx` – Simple footer with social icons
+Hi there! I am an aspiring **AI Engineer** with a strong foundation in machine learning, deep learning, and modern AI frameworks. My primary focus lies in **MLOps and model deployment** — bridging the gap between experimental models and production-ready systems through scalable, reliable, and efficient pipelines.
 
-### Setup & Installation
+- 🔭 **I’m currently working on**: Building end-to-end AI workflows and FastAPI backend systems.
+- 🌱 **I’m currently learning**: Advanced AWS SageMaker deployments, Kubernetes orchestration, and LLM fine-tuning.
+- 👯 **I’m looking to collaborate on**: Open-source MLOps tools, robust AI pipelines, and impactful data science projects.
+- 💬 **Ask me about**: Containerization (Docker), CI/CD for Machine Learning, and deploying models to the edge.
+- ⚡ **Fun fact**: I can spend hours perfecting a model architecture, but I still have to Google how to center a `div` in CSS.
 
-1. **Install dependencies**
+<br>
 
-```bash
-npm install
-```
+## 🛠 Tech Stack & Tools
 
-Required dependencies (already in `package.json` if you used the provided commands):
+### 💻 Languages
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
 
-- `next`, `react`, `react-dom`
-- `tailwindcss`, `@tailwindcss/postcss`, `postcss`
-- `typescript`, `@types/react`, `@types/node`
-- `eslint`, `eslint-config-next`
-- `framer-motion`
-- `lucide-react`
+### 🧠 Frameworks & Libraries
+<p>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+</p>
 
-2. **Run the development server**
+### 🚀 MLOps & Deployment
+<p>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
+</p>
 
-```bash
-npm run dev
-```
+### ☁️ Cloud & Infrastructure
+<p>
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+  <img src="https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" />
+  <img src="https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" />
+</p>
 
-Then open `http://localhost:3000` in your browser.
+### 📊 Data Engineering
+<p>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=python&logoColor=black" />
+</p>
 
-### Building for Production
+<br>
 
-```bash
-npm run build
-npm start
-```
+## 📂 Featured Projects
 
-This will generate an optimized production build and start the production server.
+| Project Name | Description | Tech Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **Air Quality Monitoring Pipeline** | Real-time air quality tracking synced to Firebase and visualized via live dashboard. | `ESP32`, `Python`, `Firebase`, `IoT` | [🔗 Repo](#) <!-- Add Repo Link here --> |
+| **Diabetic Retinopathy Classifier** | CNN-based deep learning model for classifying retinopathy stages from fundus imagery. | `PyTorch`, `CNNs`, `FastAPI` | [🔗 Repo](#) <!-- Add Repo Link here --> |
+| **SageMaker Inference API** | Scalable REST API for model inference deployed directly using AWS SageMaker endpoints. | `AWS SageMaker`, `FastAPI`, `Docker` | [🔗 Repo](#) <!-- Add Repo Link here --> |
+| **Automated ML Training Pipeline** | CI/CD pipeline triggering automated model retraining and MLflow tracking upon data updates. | `GitHub Actions`, `MLflow`, `scikit-learn` | [🔗 Repo](#) <!-- Add Repo Link here --> |
 
-### Customization
+<br>
 
-- **Name & Branding**: Update text in `Hero`, `Navbar`, and `Footer` to your own name and links.
-- **Social Links**: Replace placeholder GitHub, LinkedIn, and email URLs in `Contact.tsx` and `Footer.tsx`.
-- **Projects**: Edit the `PROJECTS` array in `Projects.tsx` to match your real projects.
-- **CV Download**: Add your CV as `public/cv.pdf` or change the `href` in `Hero.tsx` to your own file path.
+## 📈 GitHub Stats
 
-### Notes
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Rival5555&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Hassan's GitHub Stats" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rival5555&theme=tokyonight&hide_border=true&background=0D1117" alt="Hassan's Streak Stats" width="48%" />
+</p>
 
-- All major styling is handled via **Tailwind CSS utility classes**, with a global dark background (`#0a0a0a`) and blue → purple accent gradients.
-- Section entrance animations use **Framer Motion** with `whileInView` and `viewport={{ once: true }}` so they animate once when scrolled into view.
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rival5555&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" width="60%" />
+</p>
+
+<br>
+
+## 🗺️ Currently Learning Roadmap
+
+- [x] Master Docker containerization for ML environments
+- [x] Build scalable REST APIs using FastAPI
+- [x] Deploy inference endpoints via AWS SageMaker
+- [ ] Achieve AWS Certified Solutions Architect credential
+- [ ] Understand Kubernetes core concepts (Targeting CKA)
+- [ ] Master LoRA and QLoRA for LLM Fine-tuning
+
+<br>
+<p align="center">
+  <i>Thanks for dropping by! Let's build something intelligent together.</i>
+</p>
