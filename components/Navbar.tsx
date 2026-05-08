@@ -67,13 +67,6 @@ const Navbar = () => {
               <p className="text-[15px] font-semibold text-white">
                 Hassan Ali
               </p>
-              <div className="flex items-center gap-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 px-2.5 py-0.5 text-[10px] font-medium text-teal-300">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-teal-500"></span>
-                </span>
-                Open to Work
-              </div>
             </div>
           </div>
         </button>
@@ -95,12 +88,7 @@ const Navbar = () => {
               )}
             </button>
           ))}
-          <button
-            onClick={() => handleScroll("contact")}
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-teal-500 to-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_15px_rgba(20,184,166,0.3)] transition hover:shadow-[0_0_20px_rgba(20,184,166,0.5)]"
-          >
-            Hire Me
-          </button>
+
         </div>
 
         <button
@@ -137,12 +125,7 @@ const Navbar = () => {
                 {section.label}
               </button>
             ))}
-            <button
-              onClick={() => handleScroll("contact")}
-              className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-teal-500 to-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_0_15px_rgba(20,184,166,0.3)]"
-            >
-              Hire Me
-            </button>
+
           </div>
         </motion.div>
       )}
