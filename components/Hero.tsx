@@ -124,7 +124,7 @@ const Hero = () => {
               View My Projects
             </button>
             <a
-              href="/Hassan-Ali-Resume.pdf"
+              href="/Hassan Ali [Resume].pdf"
               className="rounded-full border border-zinc-700 bg-zinc-900/60 px-6 py-2.5 text-sm font-semibold text-zinc-100 transition hover:border-teal-500 hover:bg-zinc-900/90"
             >
               Download Resume
