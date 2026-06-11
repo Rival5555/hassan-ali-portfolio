@@ -74,7 +74,7 @@ export default function Research() {
   };
 
   return (
-    <section id="research" className="relative space-y-12 py-8 scroll-mt-20">
+    <section id="research" className="relative space-y-12 py-3 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-violet absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 

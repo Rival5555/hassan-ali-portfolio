@@ -49,7 +49,7 @@ const EXPERIENCE_DATA: Milestone[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative space-y-10 py-8 scroll-mt-20">
+    <section id="experience" className="relative space-y-10 py-3 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-violet absolute left-0 top-1/3 h-80 w-80 rounded-full" />
 

@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative space-y-10 py-8 scroll-mt-20">
+    <section id="contact" className="relative space-y-10 py-3 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 
