@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #0F172A;
+  --color-secondary-bg: #1E293B;
+  --color-primary-accent: #06B6D4;
+  --color-secondary-accent: #8B5CF6;
+  --color-text: #F8FAFC;
+  --color-muted-text: #94A3B8;
+}
+
 :root {
-  --background: #0a0a0a;
-  --foreground: #e5e5e5;
+  --background: #0F172A;
+  --foreground: #F8FAFC;
 }
 
 html {
@@ -12,4 +21,66 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-glow:hover {
+  border-color: rgba(6, 182, 212, 0.25);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+}
+
+.glass-card-glow-violet:hover {
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+/* Glow Elements */
+.glow-spot-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+.glow-spot-violet {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
+
+/* Pulse Glow Keyframes */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: subtle-pulse 8s infinite ease-in-out;
 }
