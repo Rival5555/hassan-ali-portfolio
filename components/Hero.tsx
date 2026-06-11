@@ -143,7 +143,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-72px)] flex-col justify-center overflow-hidden py-12 lg:py-16 scroll-mt-20"
+      className="relative flex flex-col justify-center overflow-hidden py-4 lg:py-6 scroll-mt-20"
     >
       {/* Interactive Particles Canvas */}
       <canvas
