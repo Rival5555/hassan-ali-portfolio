@@ -1,230 +1,338 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Terminal, Cpu, Play, CheckCircle2, ChevronRight, MapPin, Briefcase, Mail } from "lucide-react";
 
-const roles = [
-  "AI Engineer",
-  "MLOps Specialist",
-  "Model Deployment Expert",
-];
+export default function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [terminalLogs, setTerminalLogs] = useState<string[]>([
+    "Initializing MLOps pipeline...",
+    "Loading base model: ResNet-101-Backbone",
+    "Loaded pre-trained weights on ImageNet-1k",
+  ]);
+  const [inferenceStats, setInferenceStats] = useState({
+    latency: 14.2,
+    throughput: 1240,
+    accuracy: 96.4,
+  });
 
-const Hero = () => {
-  const [displayText, setDisplayText] = useState("");
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
+  // Terminal metrics simulation
   useEffect(() => {
-    const currentRole = roles[roleIndex];
+    const metricsInterval = setInterval(() => {
+      setInferenceStats((prev) => {
+        const deltaLatency = (Math.random() - 0.5) * 0.8;
+        const deltaThroughput = Math.floor((Math.random() - 0.5) * 20);
+        return {
+          latency: parseFloat(Math.min(20, Math.max(8.5, prev.latency + deltaLatency)).toFixed(1)),
+          throughput: Math.min(1350, Math.max(1180, prev.throughput + deltaThroughput)),
+          accuracy: 96.4, // Keep locked at best model accuracy
+        };
+      });
+    }, 1500);
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        const nextText = currentRole.slice(0, displayText.length + 1);
-        setDisplayText(nextText);
-        if (nextText.length === currentRole.length) {
-          setTimeout(() => setIsDeleting(true), 1000);
+    const logsList = [
+      "Running data ingestion validation (Great Expectations)... OK",
+      "Model checkpoint saved: epochs=145 loss=0.082",
+      "Uploading model artifacts to S3 bucket... DONE",
+      "Serving new inference endpoint via Triton...",
+      "Incoming inference request: shape=[1, 3, 224, 224]",
+      "Inference server status: HEALTHY (CPU: 32%, GPU: 68%)",
+      "Optimizing weights using TensorRT... -12% inference latency",
+      "Triggering pipeline run on Airflow... OK",
+    ];
+
+    const logsInterval = setInterval(() => {
+      setTerminalLogs((prev) => {
+        const nextLog = logsList[Math.floor(Math.random() * logsList.length)];
+        const timestamp = new Date().toLocaleTimeString();
+        const formattedLog = `[${timestamp}] ${nextLog}`;
+        return [...prev.slice(-4), formattedLog];
+      });
+    }, 3500);
+
+    return () => {
+      clearInterval(metricsInterval);
+      clearInterval(logsInterval);
+    };
+  }, []);
+
+  // Neural network particle canvas
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationId: number;
+    let width = (canvas.width = canvas.offsetWidth);
+    let height = (canvas.height = canvas.offsetHeight);
+
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+    }> = [];
+
+    const particleCount = Math.min(60, Math.floor((width * height) / 12000));
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 2 + 1,
+      });
+    }
+
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    let mouseX = -1000;
+    let mouseY = -1000;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
+
+    const handleMouseLeave = () => {
+      mouseX = -1000;
+      mouseY = -1000;
+    };
+
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("mouseleave", handleMouseLeave);
+
+    const draw = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw particles
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce on boundaries
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(6, 182, 212, 0.35)";
+        ctx.fill();
+      });
+
+      // Draw lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p1 = particles[i];
+          const p2 = particles[j];
+          const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+
+          if (dist < 100) {
+            const alpha = (1 - dist / 100) * 0.15;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
         }
-      } else {
-        const nextText = currentRole.slice(0, displayText.length - 1);
-        setDisplayText(nextText);
-        if (nextText.length === 0) {
-          setIsDeleting(false);
-          setRoleIndex((prev) => (prev + 1) % roles.length);
+
+        // Connect to mouse
+        const mouseDist = Math.hypot(particles[i].x - mouseX, particles[i].y - mouseY);
+        if (mouseDist < 120) {
+          const alpha = (1 - mouseDist / 120) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouseX, mouseY);
+          ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
         }
       }
-    }, isDeleting ? 40 : 100);
 
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex]);
+      animationId = requestAnimationFrame(draw);
+    };
 
-  const handleScrollToProjects = () => {
-    const el = document.getElementById("projects");
+    draw();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (canvas) {
+        canvas.removeEventListener("mousemove", handleMouseMove);
+        canvas.removeEventListener("mouseleave", handleMouseLeave);
+      }
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
+  const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <motion.section
+    <section
       id="home"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.6 }}
-      className="relative flex min-h-[calc(100vh-72px)] flex-col justify-center overflow-hidden py-10 md:py-0"
+      className="relative flex min-h-[calc(100vh-72px)] flex-col justify-center overflow-hidden py-10 lg:py-0"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-32 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-teal-900/10 blur-[100px]" />
-        <div className="absolute -bottom-32 right-0 h-[500px] w-[500px] rounded-full bg-indigo-900/10 blur-[100px]" />
-      </div>
+      {/* Interactive Particles Canvas */}
+      <canvas
+        ref={canvasRef}
+        className="pointer-events-auto absolute inset-0 -z-10 h-full w-full opacity-65"
+      />
 
-      <div className="relative grid gap-10 md:grid-cols-[minmax(0,1.25fr)_minmax(0,0.95fr)] md:items-center">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-teal-500/10 px-4 py-1 text-xs font-medium text-teal-200 backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-teal-400" />
-            <span>AI Engineer · MLOps · Cloud</span>
+      {/* Decorative Blur Backgrounds */}
+      <div className="pointer-events-none absolute -top-40 left-1/4 h-[400px] w-[400px] rounded-full bg-primary-accent/10 blur-[120px] animate-pulse-glow" />
+      <div className="pointer-events-none absolute -bottom-40 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-accent/10 blur-[120px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
+
+      <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+        {/* Left Intro Column */}
+        <div className="space-y-8 z-10">
+          {/* Metadata Badges row */}
+          <div className="flex flex-wrap gap-2.5">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary-accent/30 bg-primary-accent/10 px-3.5 py-1 text-xs font-semibold text-primary-accent backdrop-blur-md">
+              <Briefcase className="h-3 w-3" />
+              <span>Open to Opportunities</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-slate-900/60 px-3.5 py-1 text-xs font-semibold text-muted-text backdrop-blur-md">
+              <MapPin className="h-3 w-3" />
+              <span>Pakistan (Remote / Relocation)</span>
+            </span>
           </div>
 
           <div className="space-y-4">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.7 }}
-              viewport={{ once: true }}
-              className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
-            >
-              Building Intelligent Systems.{" "}
-              <br className="hidden lg:block" />
-              <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-                Deploying Real-World AI.
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl uppercase">
+              Machine Learning <br />
+              <span className="bg-gradient-to-r from-primary-accent via-cyan-400 to-secondary-accent bg-clip-text text-transparent font-black">
+                Engineer
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              viewport={{ once: true }}
-              className="text-lg font-medium text-zinc-200 sm:text-xl"
-            >
-              <span className="text-zinc-400">I specialize as an</span>{" "}
-              <span className="inline-block min-h-[1.5em] bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text font-semibold text-transparent">
-                {displayText}
-                <span className="ml-0.5 inline-block h-5 w-[2px] animate-pulse bg-teal-400 align-middle" />
-              </span>
-            </motion.p>
+            <p className="text-lg font-medium text-text/90 sm:text-xl leading-relaxed max-w-2xl border-l-2 border-primary-accent/40 pl-4">
+              Building scalable AI systems, production-ready ML pipelines, and high-performance machine learning applications.
+            </p>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            viewport={{ once: true }}
-            className="max-w-2xl text-base text-zinc-400 sm:text-lg"
-          >
-            I bridge the gap between experimental models and production-ready
-            systems. With deep expertise in{" "}
-            <span className="text-zinc-200">MLOps</span>, I leverage tools like{" "}
-            <span className="text-zinc-200">FastAPI</span> and{" "}
-            <span className="text-zinc-200">AWS SageMaker</span> to construct
-            efficient pipelines that ensure AI solutions deliver reliable,
-            real-world value.
-          </motion.p>
+          {/* Quick Stats Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 pb-2 border-t border-b border-white/5 max-w-xl">
+            <div>
+              <p className="text-2xl font-bold text-primary-accent">10+</p>
+              <p className="text-[11px] font-mono uppercase tracking-wider text-muted-text font-bold">AI Projects</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-secondary-accent">96.4%</p>
+              <p className="text-[11px] font-mono uppercase tracking-wider text-muted-text font-bold">Model Accuracy</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-emerald-400">5+</p>
+              <p className="text-[11px] font-mono uppercase tracking-wider text-muted-text font-bold">Certifications</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">Production</p>
+              <p className="text-[11px] font-mono uppercase tracking-wider text-muted-text font-bold">ML Experience</p>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center gap-4"
-          >
+          {/* Call to action buttons */}
+          <div className="flex flex-wrap items-center gap-4">
             <button
-              onClick={handleScrollToProjects}
-              className="rounded-full bg-gradient-to-r from-teal-500 to-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:shadow-blue-500/40"
+              onClick={() => handleScroll("projects")}
+              className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-accent to-secondary-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary-accent/15 transition-all hover:-translate-y-0.5 hover:shadow-secondary-accent/25 hover:scale-103 cursor-pointer"
             >
-              View My Projects
+              <span>View Projects</span>
+              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
             <a
               href="/Hassan Ali [Resume].pdf"
-              className="rounded-full border border-zinc-700 bg-zinc-900/60 px-6 py-2.5 text-sm font-semibold text-zinc-100 transition hover:border-teal-500 hover:bg-zinc-900/90"
+              download
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-secondary-bg/30 px-6 py-3 text-sm font-semibold text-text backdrop-blur-md transition-all hover:border-primary-accent/40 hover:bg-secondary-bg/60 hover:-translate-y-0.5"
             >
-              Download Resume
+              <span>Download Resume</span>
             </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-            viewport={{ once: true }}
-            className="mt-2 flex flex-wrap gap-2 text-xs text-zinc-300"
-          >
-            {[
-              "Python",
-              "PyTorch",
-              "FastAPI",
-              "Docker",
-              "AWS SageMaker",
-              "MLflow",
-              "CI/CD",
-              "Kubernetes",
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-zinc-700/80 bg-zinc-900/70 px-3 py-1 font-medium tracking-wide"
-              >
-                {tech}
-              </span>
-            ))}
-          </motion.div>
+            <button
+              onClick={() => handleScroll("contact")}
+              className="flex items-center gap-2 rounded-full border border-primary-accent/20 bg-primary-accent/5 px-6 py-3 text-sm font-semibold text-primary-accent backdrop-blur-md transition-all hover:border-primary-accent/50 hover:bg-primary-accent/15 hover:-translate-y-0.5 cursor-pointer"
+            >
+              <Mail className="h-4 w-4" />
+              <span>Contact Me</span>
+            </button>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40, y: 10 }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="hidden md:block"
-        >
-          <div className="relative rounded-3xl border border-white/5 bg-[#0D1117] p-5 shadow-2xl shadow-teal-500/10">
-            <div className="mb-6 flex items-center justify-between text-xs text-zinc-400">
-              <span className="inline-flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-teal-400" />
-                deploy_pipeline.py · aws
-              </span>
-              <span className="rounded-full bg-teal-500/10 px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider text-teal-400">
-                ACTIVE
-              </span>
+        {/* Right MLOps live server simulation */}
+        <div className="relative z-10 w-full lg:max-w-md mx-auto">
+          {/* Glassmorphic Container */}
+          <div className="glass-card rounded-3xl p-5 shadow-2xl relative overflow-hidden border border-white/5">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-primary-accent/5 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary-accent/5 rounded-full blur-2xl" />
+
+            <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
+              <div className="flex items-center gap-2">
+                <Terminal className="h-4 w-4 text-primary-accent" />
+                <span className="font-mono text-[11px] font-semibold text-text/80">production_monitor.sh</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="font-mono text-[9px] uppercase font-bold text-emerald-400">ACTIVE</span>
+              </div>
             </div>
 
-            <div className="space-y-3.5 rounded-2xl bg-[#010409]/60 p-4 font-mono text-[11px] leading-relaxed text-zinc-300">
-              <p>
-                <span className="text-zinc-500">{">"}</span> endpoint: <span className="text-teal-400">sagemaker-inference-v1</span>
-              </p>
-              <p>
-                <span className="text-zinc-500">{">"}</span> state: <span className="text-teal-400">InService</span> ·
-                latency: 42ms
-              </p>
-              <p>
-                <span className="text-zinc-500">{">"}</span> fast_api_status:{" "}
-                <span className="text-teal-400">200 OK</span> · requests/s:{" "}
-                <span className="text-blue-400">1,240</span>
-              </p>
-              <p>
-                <span className="text-zinc-500">{">"}</span> latest_run:{" "}
-                <span className="text-zinc-400">MLflow Run ID: a92b3...</span>
-              </p>
+            {/* Metrics Dashboard */}
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              <div className="bg-background/40 rounded-xl p-2.5 border border-white/5 text-center">
+                <span className="block text-[8px] uppercase tracking-wider text-muted-text font-bold mb-0.5">LATENCY</span>
+                <span className="text-xs font-mono font-bold text-primary-accent">{inferenceStats.latency}ms</span>
+              </div>
+              <div className="bg-background/40 rounded-xl p-2.5 border border-white/5 text-center">
+                <span className="block text-[8px] uppercase tracking-wider text-muted-text font-bold mb-0.5">THROUGHPUT</span>
+                <span className="text-xs font-mono font-bold text-secondary-accent">{inferenceStats.throughput}/s</span>
+              </div>
+              <div className="bg-background/40 rounded-xl p-2.5 border border-white/5 text-center">
+                <span className="block text-[8px] uppercase tracking-wider text-muted-text font-bold mb-0.5">ACCURACY</span>
+                <span className="text-xs font-mono font-bold text-emerald-400">{inferenceStats.accuracy}%</span>
+              </div>
             </div>
 
-            <div className="mt-4 grid grid-cols-3 gap-3 text-[11px] text-zinc-300">
-              <div className="rounded-xl border border-teal-500/30 bg-teal-500/5 p-3 transition-colors hover:bg-teal-500/10">
-                <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-teal-100/70">
-                  FOCUS
-                </p>
-                <p className="text-[13px] font-bold text-white">MLOps</p>
+            {/* Log Console */}
+            <div className="rounded-xl bg-background/90 p-4 font-mono text-[10px] leading-relaxed text-slate-300 min-h-[140px] flex flex-col justify-end border border-white/5">
+              <div className="space-y-2">
+                {terminalLogs.map((log, index) => (
+                  <div key={index} className="flex gap-2">
+                    <span className="text-secondary-accent font-bold select-none">&gt;&gt;</span>
+                    <span className="break-all">{log}</span>
+                  </div>
+                ))}
               </div>
-              <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-3 transition-colors hover:bg-purple-500/10">
-                <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-purple-100/70">
-                  EXPERTISE
-                </p>
-                <p className="text-[13px] font-bold text-white">
-                  ML · DL · IoT
-                </p>
-              </div>
-              <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 transition-colors hover:bg-emerald-500/10">
-                <p className="mb-1 text-[10px] font-medium uppercase tracking-wider text-emerald-100/70">
-                  STATUS
-                </p>
-                <p className="text-[13px] font-bold text-emerald-400">
-                  Open to work
-                </p>
-              </div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between text-[10px] text-muted-text font-mono border-t border-white/5 pt-4">
+              <span className="flex items-center gap-1">
+                <Play className="h-3 w-3 text-emerald-400" /> Model: ResNet101
+              </span>
+              <span className="flex items-center gap-1">
+                <CheckCircle2 className="h-3 w-3 text-primary-accent" /> Triton Server
+              </span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
-};
-
-export default Hero;
-
+}
