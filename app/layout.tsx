@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} bg-[#0a0a0a] text-zinc-100 antialiased`}
+        className={`${poppins.variable} bg-background text-text antialiased font-sans`}
       >
         <div className="relative min-h-screen">
           <Navbar />
