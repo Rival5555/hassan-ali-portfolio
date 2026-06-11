@@ -6,8 +6,8 @@ import { GitPullRequest, Star, BookOpen, Activity, Terminal } from "lucide-react
 
 export default function Github() {
   const [stats, setStats] = useState({
-    repos: 18,
-    stars: 5,
+    repos: 12,
+    stars: 31,
     commits: 342,
     prs: 12,
   });
