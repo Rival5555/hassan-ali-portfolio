@@ -2,18 +2,30 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
+import Research from "@/components/Research";
+import Github from "@/components/Github";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#050914] text-zinc-100">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(20,83,45,0.15),_transparent_60%),radial-gradient(circle_at_bottom,_rgba(30,58,138,0.15),_transparent_60%)]" />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[url('/bg-dots.svg')] bg-[length:24px_24px] bg-repeat opacity-[0.03]" />
-      <div className="mx-auto flex max-w-6xl flex-col gap-24 px-4 pb-16 pt-[72px] sm:px-6 lg:px-0">
+    <main className="relative min-h-screen bg-background text-text">
+      {/* High-tech Ambient Gradients */}
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(6,182,212,0.1),_transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(139,92,246,0.08),_transparent_55%)]" />
+      
+      {/* Tech grid/dots pattern */}
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[url('/bg-dots.svg')] bg-[length:32px_32px] bg-repeat opacity-[0.035]" />
+
+      <div className="mx-auto flex max-w-6xl flex-col gap-28 px-4 pb-20 pt-[88px] sm:px-6 lg:px-4">
         <Hero />
         <About />
         <Skills />
         <Projects />
+        <Experience />
+        <Certifications />
+        <Research />
+        <Github />
         <Contact />
       </div>
     </main>
