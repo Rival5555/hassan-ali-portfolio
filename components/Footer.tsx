@@ -2,45 +2,53 @@
 
 import { Github, Linkedin, Mail } from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-teal-500/10 bg-[#050914]/80">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 text-xs text-zinc-500 sm:flex-row sm:px-6 lg:px-0">
-        <p className="text-center sm:text-left">
-          &copy; {year}{" "}
-          <span className="font-medium text-zinc-300">Hassan</span>. All rights
-          reserved.
-        </p>
+    <footer className="border-t border-white/5 bg-background relative overflow-hidden py-8">
+      {/* Subtle background glow */}
+      <div className="absolute bottom-0 right-1/3 w-96 h-20 bg-secondary-accent/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 text-xs sm:flex-row sm:px-6 lg:px-4">
+        <div className="text-center sm:text-left space-y-1">
+          <p className="text-text/90 font-medium text-sm">
+            &copy; {year} <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-bold">Hassan Ali</span>. All rights reserved.
+          </p>
+          <p className="text-[10px] text-muted-text/80 font-mono">
+            Optimized for production-grade deployments.
+          </p>
+        </div>
+
+        {/* Social Link circles */}
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/Rival5555"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-zinc-700/80 bg-[#0A0F1E] p-1.5 text-zinc-300 transition hover:border-teal-500 hover:text-white"
+            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-muted-text hover:text-primary-accent hover:border-primary-accent/40 hover:scale-105 transition-all"
+            aria-label="GitHub Profile"
           >
-            <Github className="h-3.5 w-3.5" />
+            <Github className="h-4 w-4" />
           </a>
           <a
             href="https://www.linkedin.com/in/hasanali09"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-zinc-700/80 bg-[#0A0F1E] p-1.5 text-zinc-300 transition hover:border-teal-500 hover:text-white"
+            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-muted-text hover:text-secondary-accent hover:border-secondary-accent/40 hover:scale-105 transition-all"
+            aria-label="LinkedIn Profile"
           >
-            <Linkedin className="h-3.5 w-3.5" />
+            <Linkedin className="h-4 w-4" />
           </a>
           <a
             href="mailto:hassanali93r@gmail.com"
-            className="inline-flex items-center justify-center rounded-full border border-zinc-700/80 bg-[#0A0F1E] p-1.5 text-zinc-300 transition hover:border-teal-500 hover:text-white"
+            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-muted-text hover:text-primary-accent hover:border-primary-accent/40 hover:scale-105 transition-all"
+            aria-label="Email Contact"
           >
-            <Mail className="h-3.5 w-3.5" />
+            <Mail className="h-4 w-4" />
           </a>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
-
+}
