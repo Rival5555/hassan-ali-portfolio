@@ -1,148 +1,98 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Code2, Brain, Database, Eye, Cloud } from "lucide-react";
 
 type SkillCategory = {
   title: string;
-  description: string;
+  icon: any;
   skills: string[];
 };
 
-const SKILL_CATEGORIES: SkillCategory[] = [
+const SKILL_DATA: SkillCategory[] = [
   {
-    title: "Programming Languages",
-    description: "Core languages for scripting, automation, and data querying.",
-    skills: ["Python", "SQL", "Bash / Shell Scripting"],
+    title: "Programming",
+    icon: Code2,
+    skills: ["Python", "C++", "SQL", "Linux / Shell Scripting"],
   },
   {
-    title: "Machine Learning & AI",
-    description: "Building, training, and fine-tuning intelligent models.",
-    skills: [
-      "Scikit-learn",
-      "TensorFlow",
-      "PyTorch",
-      "Model Training & Evaluation",
-      "Hyperparameter Tuning",
-    ],
+    title: "Machine Learning",
+    icon: Brain,
+    skills: ["Scikit-Learn", "XGBoost", "PyTorch", "TensorFlow"],
   },
   {
-    title: "MLOps & Deployment",
-    description: "Bridging the gap from notebooks to production.",
-    skills: [
-      "FastAPI",
-      "AWS SageMaker",
-      "Docker",
-      "Kubernetes",
-      "MLflow",
-      "CI/CD Pipelines",
-      "REST API Development",
-    ],
+    title: "Computer Vision",
+    icon: Eye,
+    skills: ["OpenCV", "CNNs", "Object Detection", "Image Classification"],
   },
   {
-    title: "Cloud & Infrastructure",
-    description: "Deploying and scaling models in the cloud.",
-    skills: [
-      "Amazon Web Services (AWS)",
-      "Google Cloud Platform (GCP)",
-      "Azure ML",
-      "Cloud Storage & Compute",
-    ],
+    title: "MLOps",
+    icon: Database,
+    skills: ["Docker", "MLflow", "FastAPI", "CI/CD Pipelines"],
   },
   {
-    title: "Data Engineering",
-    description: "Preparing pipelines for model ingestion.",
-    skills: [
-      "Data Preprocessing",
-      "Feature Engineering",
-      "NumPy",
-      "Pandas",
-      "Data Pipelines",
-    ],
-  },
-  {
-    title: "Tools & Platforms",
-    description: "The environment and utilities for modern engineering.",
-    skills: [
-      "Git & GitHub",
-      "Jupyter Notebook",
-      "VS Code",
-      "Weights & Biases",
-      "Linux / Ubuntu",
-    ],
-  },
-  {
-    title: "Soft Skills",
-    description: "Collaboration and continuous learning mindsets.",
-    skills: [
-      "Analytical Thinking",
-      "Problem Solving",
-      "Continuous Learning",
-      "Team Collaboration",
-      "Technical Documentation",
-    ],
+    title: "Cloud Infrastructure",
+    icon: Cloud,
+    skills: ["Amazon Web Services (AWS)", "Google Cloud Platform (GCP)", "AWS SageMaker", "S3 & EC2 compute"],
   },
 ];
 
-const Skills = () => {
+export default function Skills() {
   return (
-    <motion.section
-      id="skills"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.4 }}
-      className="space-y-8"
-    >
-      <div className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-          Skills &amp;{" "}
-          <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-            Expertise
+    <section id="skills" className="relative space-y-10 py-8 scroll-mt-20">
+      {/* Decorative Glow Spot */}
+      <div className="glow-spot-violet absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
+
+      <div className="space-y-2">
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Technical{" "}
+          <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
+            Competencies
           </span>
         </h2>
-        <p className="max-w-2xl text-sm text-zinc-400 sm:text-base">
-          A stack that connects{" "}
-          <span className="text-zinc-200">machine learning</span>,{" "}
-          <span className="text-zinc-200">embedded devices</span>, and{" "}
-          <span className="text-zinc-200">modern frontend engineering</span>.
+        <div className="h-1 w-20 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full" />
+        <p className="max-w-xl text-sm text-muted-text pt-2 leading-relaxed">
+          A targeted stack specialized in constructing high-performing model architectures and orchestrating production deployments.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {SKILL_CATEGORIES.map((category, index) => (
-          <motion.div
-            key={category.title}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0D1117] p-5 shadow-[0_0_20px_rgba(20,184,166,0.05)] transition hover:shadow-[0_0_25px_rgba(20,184,166,0.1)]"
-          >
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-blue-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative space-y-3">
-              <h3 className="text-lg font-semibold text-white">
-                {category.title}
-              </h3>
-              <p className="text-sm text-zinc-400">
-                {category.description}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {SKILL_DATA.map((category, idx) => {
+          const Icon = category.icon;
+          return (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
+              viewport={{ once: true, amount: 0.15 }}
+              className="glass-card rounded-3xl p-5 border border-white/5 relative overflow-hidden group hover:border-primary-accent/30 transition-all duration-300"
+            >
+              {/* Subtle hover accent light */}
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-primary-accent to-secondary-accent opacity-0 group-hover:opacity-40 transition-opacity" />
+
+              <div className="flex items-center gap-2.5 mb-4 border-b border-white/5 pb-3">
+                <div className="p-2 rounded-xl bg-primary-accent/10 border border-primary-accent/10 text-primary-accent group-hover:bg-primary-accent group-hover:text-slate-950 transition-colors">
+                  <Icon className="h-4.5 w-4.5" />
+                </div>
+                <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">{category.title}</h3>
+              </div>
+
+              {/* Skills Tags layout */}
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-teal-500/20 bg-[#010409]/80 px-3 py-1 text-xs font-medium text-zinc-300 transition hover:border-teal-400 hover:bg-teal-500/10 hover:text-white"
+                    className="rounded-xl border border-white/5 bg-slate-950/40 px-3.5 py-1.5 text-xs text-text/90 font-medium tracking-wide hover:border-primary-accent/30 hover:bg-slate-900 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
-    </motion.section>
+    </section>
   );
-};
-
-export default Skills;
-
+}
