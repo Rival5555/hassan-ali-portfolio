@@ -1,90 +1,195 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { BrainCircuit, BookOpen, Target, GraduationCap } from "lucide-react";
 
-const About = () => {
+type TabType = "expertise" | "education" | "goals";
+
+export default function About() {
+  const [activeTab, setActiveTab] = useState<TabType>("expertise");
+
+  const tabContents = {
+    expertise: (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.25 }}
+        className="space-y-4"
+      >
+        <p className="text-muted-text text-sm leading-relaxed">
+          I specialize in designing and deploying end-to-end Machine Learning systems. My expertise bridges the gap between deep mathematical modeling and production-scale software engineering, focusing on pipeline automation and low-latency deployments.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 pt-2">
+          <div className="bg-secondary-bg/30 border border-white/5 rounded-2xl p-4 glass-card">
+            <h4 className="text-xs font-bold text-primary-accent uppercase tracking-wider mb-1">Production AI Systems</h4>
+            <p className="text-[11px] text-muted-text leading-normal">Implementing customized computer vision architectures, time-series forecasting frameworks, and NLP pipelines optimized for deployment environments.</p>
+          </div>
+          <div className="bg-secondary-bg/30 border border-white/5 rounded-2xl p-4 glass-card">
+            <h4 className="text-xs font-bold text-secondary-accent uppercase tracking-wider mb-1">MLOps Infrastructure</h4>
+            <p className="text-[11px] text-muted-text leading-normal">Orchestrating model serving endpoints with FastAPI and Docker, configuring S3 data stores, and establishing automated model tracking via MLflow.</p>
+          </div>
+        </div>
+      </motion.div>
+    ),
+    education: (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.25 }}
+        className="space-y-4"
+      >
+        <div className="space-y-4">
+          <div className="flex gap-4 items-start bg-secondary-bg/30 border border-white/5 rounded-2xl p-4 glass-card">
+            <div className="p-2.5 rounded-xl bg-primary-accent/10 border border-primary-accent/20 text-primary-accent shrink-0">
+              <GraduationCap className="h-5 w-5" />
+            </div>
+            <div>
+              <span className="text-xs text-primary-accent font-semibold font-mono">2023 - Onward</span>
+              <h4 className="text-base font-bold text-white leading-snug">Bachelor of Science in Artificial Intelligence</h4>
+              <p className="text-xs text-muted-text">Specialization in Deep Learning & Embedded AI Systems</p>
+              <p className="text-[11px] text-muted-text/80 mt-1.5">Key coursework: Neural Networks, Machine Learning Architectures, Distributed Systems, Probability Models, Embedded Signal Processing.</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    ),
+    goals: (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.25 }}
+        className="space-y-4"
+      >
+        <p className="text-muted-text text-sm leading-relaxed">
+          My primary objective is to contribute to forward-thinking tech teams pushing the boundaries of AI deployment. I aim to write highly optimized code that accelerates inference and lowers compute budgets.
+        </p>
+        <div className="space-y-2.5 pt-1">
+          <div className="flex items-center gap-3">
+            <div className="h-2 w-2 rounded-full bg-primary-accent" />
+            <span className="text-xs text-text font-medium font-mono">Standardize MLOps automation templates to reduce lead time</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="h-2 w-2 rounded-full bg-secondary-accent" />
+            <span className="text-xs text-text font-medium font-mono">Compile models for ultra-low latency inference on edge systems</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="text-xs text-text font-medium font-mono">Establish automated model retraining triggered on population drift detection</span>
+          </div>
+        </div>
+      </motion.div>
+    ),
+  };
+
   return (
-    <motion.section
-      id="about"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.4 }}
-      className="space-y-8"
-    >
-      <div className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+    <section id="about" className="relative space-y-10 py-8 scroll-mt-20">
+      {/* Decorative Glow Spot */}
+      <div className="glow-spot-cyan absolute right-0 top-1/4 h-80 w-80 rounded-full" />
+
+      <div className="space-y-2">
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           About{" "}
-          <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
             Me
           </span>
         </h2>
-        <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-          WHO I AM
-        </p>
+        <div className="h-1 w-20 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full" />
       </div>
 
-      <div className="grid gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] md:items-center">
-        <div className="relative flex justify-center md:justify-start">
-          <div className="relative h-40 w-40 overflow-hidden rounded-3xl border border-teal-500/40 bg-gradient-to-br from-teal-500/50 via-blue-500/40 to-transparent p-[2px] shadow-[0_0_30px_rgba(20,184,166,0.2)] sm:h-48 sm:w-48">
-            <div className="relative h-full w-full overflow-hidden rounded-3xl bg-zinc-950/80">
-              <Image
-                src="/hassan-portrait.jpg"
-                alt="Hassan Ali portrait"
-                fill
-                priority
-                className="object-cover"
-                sizes="(min-width: 768px) 12rem, 10rem"
-              />
+      <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+        {/* Left: Circular Avatar headshot */}
+        <div className="flex justify-center">
+          <div className="relative group">
+            {/* Animated background glow */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary-accent to-secondary-accent opacity-30 blur-lg transition duration-700 group-hover:opacity-50" />
+            
+            {/* Circular Headshot Container */}
+            <div className="relative h-56 w-56 rounded-full bg-[#0b0f19] p-2.5 border border-white/10 overflow-hidden shadow-2xl">
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-950">
+                <Image
+                  src="/hassan-portrait.jpg"
+                  alt="Hassan Ali Portrait"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-750 group-hover:scale-105"
+                  sizes="14rem"
+                />
+                {/* Subtle vertical scan line */}
+                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent opacity-85 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
+              </div>
             </div>
+
+            {/* Glowing borders */}
+            <div className="absolute -inset-0.5 rounded-full border border-primary-accent/30 group-hover:border-secondary-accent/40 transition-colors pointer-events-none" />
           </div>
-          <div className="pointer-events-none absolute -bottom-4 -right-4 hidden h-20 w-20 rounded-2xl border border-dashed border-blue-500/40 md:block" />
         </div>
 
-        <div className="space-y-4 text-zinc-300">
-          <p>
-            I am an aspiring{" "}
-            <span className="font-semibold text-white">AI Engineer</span> with a
-            strong foundation in machine learning, deep learning, and modern AI
-            frameworks. My primary focus lies in{" "}
-            <span className="text-white">MLOps and model deployment</span> —
-            bridging the gap between experimental models and production-ready
-            systems through scalable, reliable, and efficient pipelines.
-          </p>
-          <p>
-            I am passionate about building{" "}
-            <span className="font-semibold text-white">
-              end-to-end AI workflows
-            </span>
-            , from data preprocessing and model training to containerisation,
-            CI/CD integration, and cloud deployment. I have hands-on experience
-            deploying models using <span className="text-white">FastAPI</span>{" "}
-            for building robust, high-performance REST APIs and{" "}
-            <span className="text-white">AWS SageMaker</span> for scalable
-            cloud-based model training and inference. I further leverage tools
-            such as Docker, Kubernetes, and MLflow to ensure models deliver
-            real-world value beyond the notebook.
-          </p>
-          <p>
-            As a fresher, I bring a{" "}
-            <span className="text-white">growth-oriented mindset</span>, a
-            commitment to engineering best practices, and a keen interest in
-            keeping pace with the rapidly evolving AI landscape.
-          </p>
-          <p>
-            I am actively seeking opportunities where I can contribute to{" "}
-            <span className="font-semibold text-white">
-              impactful AI projects
-            </span>{" "}
-            and grow within a collaborative, forward-thinking team.
-          </p>
+        {/* Right: Tabs and biography */}
+        <div className="space-y-6">
+          <div className="space-y-3">
+            <h3 className="text-lg font-bold text-white tracking-wide">
+              Engineering Scalable Machine Learning Solutions
+            </h3>
+            <p className="text-sm text-muted-text leading-relaxed">
+              I am an aspiring Machine Learning Engineer focused on writing highly optimized deep learning workloads and deploying them into secure production environments. I bring a strong background in Artificial Intelligence systems, automated model tracking, and cloud orchestrations.
+            </p>
+          </div>
+
+          {/* Tabs header */}
+          <div className="flex border-b border-white/5 pb-2 gap-2">
+            {[
+              { id: "expertise", label: "Expertise", icon: BrainCircuit },
+              { id: "education", label: "Education", icon: BookOpen },
+              { id: "goals", label: "Career Goals", icon: Target },
+            ].map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as TabType)}
+                  className={`relative flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer ${
+                    isActive ? "text-primary-accent" : "text-muted-text hover:text-white"
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{tab.label}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary-accent to-secondary-accent"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Tabs content container */}
+          <div className="min-h-[220px] bg-secondary-bg/25 border border-white/5 rounded-3xl p-6 glass-card relative">
+            <AnimatePresence mode="wait">
+              {tabContents[activeTab]}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
-    </motion.section>
+
+      <style jsx global>{`
+        @keyframes scan {
+          0%, 100% {
+            top: 0%;
+          }
+          50% {
+            top: 100%;
+          }
+        }
+      `}</style>
+    </section>
   );
-};
-
-export default About;
-
-
+}
