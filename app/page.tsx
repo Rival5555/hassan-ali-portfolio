@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -19,7 +18,6 @@ export default function Home() {
 
       <div className="mx-auto flex max-w-6xl flex-col gap-28 px-4 pb-20 pt-[88px] sm:px-6 lg:px-4">
         <Hero />
-        <About />
         <Skills />
         <Projects />
         <Experience />
