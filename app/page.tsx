@@ -15,7 +15,9 @@ export default function Home() {
 
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 pb-16 pt-[72px] sm:px-6 lg:px-4">
         <Hero />
-        <Skills />
+        <div className="-mt-8 lg:-mt-12">
+          <Skills />
+        </div>
         <Projects />
         <Github />
         <Contact />
