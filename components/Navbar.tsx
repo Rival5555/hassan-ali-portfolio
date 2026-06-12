@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X, Cpu, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -60,8 +61,14 @@ export default function Navbar() {
           onClick={() => handleScroll("home")}
           className="flex items-center gap-2.5 text-left cursor-pointer group"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-accent to-secondary-accent text-white shadow-md shadow-primary-accent/15 group-hover:scale-105 transition-transform">
-            <Cpu className="h-4.5 w-4.5" />
+          <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-slate-950 shadow-md group-hover:scale-105 group-hover:border-primary-accent/30 transition-all">
+            <Image
+              src="/hassan-portrait.jpg"
+              alt="Hassan Ali Brand"
+              fill
+              className="object-cover"
+              sizes="2.25rem"
+            />
           </div>
           <div className="leading-tight">
             <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
