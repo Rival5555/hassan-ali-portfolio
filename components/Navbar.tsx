@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X, Cpu } from "lucide-react";
+import { Menu, X, Cpu, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SECTIONS = [
@@ -91,6 +91,16 @@ export default function Navbar() {
               )}
             </button>
           ))}
+
+          {/* Download Resume Button */}
+          <a
+            href="/Hassan Ali [Resume].pdf"
+            download
+            className="flex items-center gap-1.5 rounded-full border border-primary-accent/30 bg-primary-accent/10 px-3.5 py-1.5 text-[10px] uppercase tracking-wider font-bold text-primary-accent backdrop-blur-md transition-all hover:border-primary-accent/60 hover:bg-primary-accent/20 hover:-translate-y-0.5"
+          >
+            <Download className="h-3.5 w-3.5" />
+            <span>Resume</span>
+          </a>
         </div>
 
         {/* Mobile menu trigger */}
@@ -126,6 +136,17 @@ export default function Navbar() {
                   {section.label}
                 </button>
               ))}
+
+              {/* Mobile Download Resume */}
+              <a
+                href="/Hassan Ali [Resume].pdf"
+                download
+                className="flex items-center justify-center gap-2 rounded-xl border border-primary-accent/30 bg-primary-accent/10 px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider text-primary-accent transition-all hover:bg-primary-accent/20"
+                onClick={() => setIsOpen(false)}
+              >
+                <Download className="h-4 w-4" />
+                <span>Download Resume</span>
+              </a>
             </div>
           </motion.div>
         )}
