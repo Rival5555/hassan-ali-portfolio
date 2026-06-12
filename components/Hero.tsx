@@ -201,7 +201,7 @@ export default function Hero() {
           </div>
 
           {/* Metrics grid */}
-          <div className="grid grid-cols-3 gap-6 pt-5 pb-2 border-t border-b border-white/5 max-w-lg">
+          <div className="grid grid-cols-2 gap-6 pt-5 pb-2 border-t border-b border-white/5 max-w-lg">
             <div>
               <p className="text-xl font-bold text-primary-accent">10+</p>
               <p className="text-[10px] font-mono uppercase tracking-wider text-muted-text font-bold">AI Projects</p>
@@ -209,10 +209,6 @@ export default function Hero() {
             <div>
               <p className="text-xl font-bold text-secondary-accent">96.4%</p>
               <p className="text-[10px] font-mono uppercase tracking-wider text-muted-text font-bold">Best Accuracy</p>
-            </div>
-            <div>
-              <p className="text-xl font-bold text-white">2+</p>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-muted-text font-bold">Research Works</p>
             </div>
           </div>
 
