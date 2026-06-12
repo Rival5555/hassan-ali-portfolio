@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronRight, Mail, Briefcase, CheckCircle2 } from "lucide-react";
+import { ChevronRight, Mail, Briefcase } from "lucide-react";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -184,33 +184,6 @@ export default function Hero() {
             Passionate Machine Learning Engineer specializing in Deep Learning, Computer Vision, NLP, and MLOps. Experienced in developing end-to-end AI systems from data pipelines to production deployment.
           </p>
 
-          {/* Highlights checklist */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 max-w-xl pt-2">
-            {[
-              "Machine Learning",
-              "Deep Learning",
-              "Computer Vision",
-              "MLOps Systems",
-              "Cloud Deployment",
-            ].map((highlight) => (
-              <div key={highlight} className="flex items-center gap-2 text-xs text-text/90">
-                <CheckCircle2 className="h-4 w-4 text-primary-accent shrink-0" />
-                <span className="font-semibold">{highlight}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Metrics grid */}
-          <div className="grid grid-cols-2 gap-6 pt-5 pb-2 border-t border-b border-white/5 max-w-lg">
-            <div>
-              <p className="text-xl font-bold text-primary-accent">10+</p>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-muted-text font-bold">AI Projects</p>
-            </div>
-            <div>
-              <p className="text-xl font-bold text-secondary-accent">96.4%</p>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-muted-text font-bold">Best Accuracy</p>
-            </div>
-          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -301,7 +274,7 @@ export default function Hero() {
       </div>
 
       {/* TECH STACK STRIP - INFINITE SCROLL MARQUEE */}
-      <div className="mt-16 pt-8 border-t border-white/5 w-full relative overflow-hidden">
+      <div className="mt-8 pt-6 border-t border-white/5 w-full relative overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         
