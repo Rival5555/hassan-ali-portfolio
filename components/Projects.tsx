@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Activity, Info, ChevronDown, ChevronUp } from "lucide-react";
-
-type Metric = {
-  label: string;
-  value: string;
-};
+import { Github, ExternalLink, Info, ChevronDown, ChevronUp } from "lucide-react";
 
 type CaseStudyDetail = {
   challenge: string;
@@ -20,7 +15,6 @@ type Project = {
   category: string;
   problemStatement: string;
   tags: string[];
-  metrics: Metric[];
   achievements: string[];
   caseStudy: CaseStudyDetail;
   github: string;
@@ -33,11 +27,6 @@ const PROJECTS_DATA: Project[] = [
     category: "Deep Learning · Medical Imaging",
     problemStatement: "Manual screening of diabetic retinopathy is slow and prone to human diagnostic error. This project automates diagnostic grading to assist ophthalmologists with high reliability.",
     tags: ["PyTorch", "CNN", "FastAPI", "Docker", "Model Quantization"],
-    metrics: [
-      { label: "Accuracy", value: "96.4%" },
-      { label: "F1 Score", value: "0.95" },
-      { label: "Latency", value: "12ms (GPU)" },
-    ],
     achievements: [
       "Optimized ResNet/EfficientNet backbones using progressive resizing to resolve fine lesion details.",
       "Mitigated clinical dataset class imbalance (1:10) through focal loss adjustments and RandAugment.",
@@ -56,11 +45,6 @@ const PROJECTS_DATA: Project[] = [
     category: "Time-Series AI · Embedded IoT",
     problemStatement: "Air quality indices vary rapidly, making active preventative ventilation impossible without early forecasts. This system forecasts pollution levels on edge hardware.",
     tags: ["ESP32", "LSTM", "Firebase", "TensorFlow", "IoT Platform"],
-    metrics: [
-      { label: "Accuracy", value: "94.2%" },
-      { label: "F1 Score", value: "0.93" },
-      { label: "Latency", value: "4ms (CPU)" },
-    ],
     achievements: [
       "Built time-series forecasting utilizing stacked LSTMs to predict air quality degradation 3 hours ahead.",
       "Synchronized physical ESP32 sensors (PM2.5, CO2, Temp) to Firebase with write latencies under 2.5s.",
@@ -79,11 +63,6 @@ const PROJECTS_DATA: Project[] = [
     category: "Infrastructure · Cloud Automation",
     problemStatement: "Production models degrade quickly due to real-world data drift. This automated framework monitors features and retrains endpoints without manual intervention.",
     tags: ["AWS SageMaker", "MLflow", "CI/CD", "Docker", "Python SDK"],
-    metrics: [
-      { label: "Deploy Time", value: "8 min" },
-      { label: "SLA Check", value: "99.9%" },
-      { label: "Downtime", value: "0.0s (A/B)" },
-    ],
     achievements: [
       "Established automatic data drift validation using Population Stability Index tests in SageMaker.",
       "Integrated automated retraining triggers using MLflow webhooks, tracking parameters and loss checkpoints.",
@@ -161,25 +140,6 @@ export default function Projects() {
                   </p>
                 </div>
 
-                {/* Results telemetry grid */}
-                <div className="bg-slate-950/30 border border-white/5 rounded-2xl p-3">
-                  <div className="flex items-center gap-1.5 mb-2.5 text-[9px] font-mono font-bold text-muted-text uppercase tracking-wider">
-                    <Activity className="h-3.5 w-3.5 text-primary-accent" />
-                    <span>Performance telemetry</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    {project.metrics.map((metric) => (
-                      <div key={metric.label} className="bg-slate-900/40 p-2 rounded-xl border border-white/5 text-center">
-                        <span className="block text-[8px] uppercase tracking-wider text-muted-text/70 font-semibold mb-0.5">
-                          {metric.label}
-                        </span>
-                        <span className="font-mono text-xs font-bold text-text">
-                          {metric.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Key Achievements */}
                 <div className="space-y-1.5">
