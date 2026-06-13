@@ -19,19 +19,19 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative space-y-10 py-3 scroll-mt-20">
+    <section id="contact" className="relative space-y-10 py-12 md:py-16 lg:py-24 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 
       <div className="space-y-2 text-center md:text-left">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl uppercase">
+        <h2 className="text-fluid-h2 font-bold tracking-tight text-white uppercase">
           Let&apos;s Build{" "}
           <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
             AI Solutions Together
           </span>
         </h2>
         <div className="h-1 w-20 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full mx-auto md:mx-0" />
-        <p className="max-w-xl text-sm text-muted-text pt-2 leading-relaxed mx-auto md:mx-0">
+        <p className="max-w-xl text-fluid-body text-muted-text pt-2 leading-relaxed mx-auto md:mx-0">
           Have an AI pipeline optimization challenge, a model deployment project, or want to collaborate? Send a message directly.
         </p>
       </div>
