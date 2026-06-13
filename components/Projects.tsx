@@ -110,24 +110,24 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative space-y-10 py-3 scroll-mt-20">
+    <section id="projects" className="relative space-y-10 py-12 md:py-16 lg:py-24 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute right-0 bottom-1/3 h-80 w-80 rounded-full" />
 
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-fluid-h2 font-bold tracking-tight text-white">
           Featured{" "}
           <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
             Projects
           </span>
         </h2>
         <div className="h-1 w-20 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full" />
-        <p className="max-w-xl text-sm text-muted-text pt-2 leading-relaxed">
+        <p className="max-w-xl text-fluid-body text-muted-text pt-2 leading-relaxed">
           Developing production-grade ML applications and orchestrating cloud pipelines.
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS_DATA.map((project, idx) => {
           const isExpanded = !!expandedCards[idx];
           return (
@@ -245,21 +245,21 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900/40 py-2.5 text-xs font-semibold text-text hover:border-primary-accent/40 hover:bg-slate-900 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900/40 py-3 text-xs font-semibold text-text hover:border-primary-accent/40 hover:bg-slate-900 transition-colors min-h-[44px]"
                 >
                   <Github className="h-3.5 w-3.5" />
                   <span>GitHub</span>
                 </a>
                 <a
                   href={project.demo}
-                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900/40 py-2.5 text-xs font-semibold text-text hover:border-secondary-accent/40 hover:bg-slate-900 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900/40 py-3 text-xs font-semibold text-text hover:border-secondary-accent/40 hover:bg-slate-900 transition-colors min-h-[44px]"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
                   <span>Live Demo</span>
                 </a>
                 <button
                   onClick={() => toggleCaseStudy(idx)}
-                  className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-primary-accent to-secondary-accent py-2.5 text-xs font-bold text-white shadow-md shadow-primary-accent/10 hover:shadow-secondary-accent/20 transition-all hover:scale-101 cursor-pointer"
+                  className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-primary-accent to-secondary-accent py-3 text-xs font-bold text-white shadow-md shadow-primary-accent/10 hover:shadow-secondary-accent/20 transition-all hover:scale-101 cursor-pointer min-h-[44px]"
                 >
                   <span>Case Study</span>
                   {isExpanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}

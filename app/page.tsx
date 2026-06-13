@@ -13,11 +13,9 @@ export default function Home() {
       {/* Tech grid/dots pattern */}
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[url('/bg-dots.svg')] bg-[length:32px_32px] bg-repeat opacity-[0.035]" />
 
-      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-4 pb-16 pt-[72px] sm:px-6 lg:px-4">
+      <div className="mx-auto flex max-w-6xl flex-col px-4 pt-[72px] md:px-6 lg:px-8">
         <Hero />
-        <div className="-mt-8 lg:-mt-12">
-          <Skills />
-        </div>
+        <Skills />
         <Projects />
         <Github />
         <Contact />

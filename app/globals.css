@@ -84,3 +84,33 @@ body {
 .animate-pulse-glow {
   animation: subtle-pulse 8s infinite ease-in-out;
 }
+
+/* Fluid Typography Utilities */
+.text-fluid-h1 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.1;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(1.75rem, 3.5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.text-fluid-sub {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.text-fluid-body {
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  line-height: 1.6;
+}
+
+/* Hide scrollbar utility for touch scroll container */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

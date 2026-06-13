@@ -40,6 +40,18 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  // Lock body scroll when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -55,7 +67,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl"
     >
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-4">
+      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <button
           onClick={() => handleScroll("home")}
@@ -77,7 +89,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop navigation */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {SECTIONS.map((section) => (
             <button
               key={section.id}
@@ -113,49 +125,83 @@ export default function Navbar() {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-text/80 transition hover:border-primary-accent/40 hover:text-white md:hidden cursor-pointer"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-text/80 transition hover:border-primary-accent/40 hover:text-white lg:hidden cursor-pointer"
           aria-label="Toggle navigation"
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile navigation menu */}
+      {/* Mobile navigation menu drawer */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="border-t border-white/5 bg-background/95 backdrop-blur-2xl md:hidden overflow-hidden"
-          >
-            <div className="flex flex-col space-y-1.5 px-4 py-3 sm:px-6">
-              {SECTIONS.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => handleScroll(section.id)}
-                  className={`rounded-xl px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
-                    activeSection === section.id
-                      ? "bg-gradient-to-r from-primary-accent/15 to-secondary-accent/15 text-primary-accent border-l-2 border-primary-accent"
-                      : "text-muted-text hover:bg-white/5 hover:text-white"
-                  }`}
-                >
-                  {section.label}
-                </button>
-              ))}
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+            />
+
+            {/* Slide-in Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs p-6 shadow-2xl backdrop-blur-2xl border-l border-white/5 lg:hidden flex flex-col justify-between"
+              style={{ backgroundColor: "#0F172A" }}
+            >
+              <div className="space-y-6">
+                {/* Drawer Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-white/5">
+                  <div className="leading-tight">
+                    <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
+                    <span className="text-[10px] text-muted-text font-mono">Navigation Menu</span>
+                  </div>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 text-text/80 transition hover:border-primary-accent/40 hover:text-white cursor-pointer"
+                    aria-label="Close menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+
+                {/* Navigation Links */}
+                <div className="flex flex-col space-y-2.5">
+                  {SECTIONS.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => handleScroll(section.id)}
+                      className={`rounded-2xl px-4 py-3.5 text-left text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${
+                        activeSection === section.id
+                          ? "bg-gradient-to-r from-primary-accent/15 to-secondary-accent/15 text-primary-accent border-l-2 border-primary-accent"
+                          : "text-muted-text hover:bg-white/5 hover:text-white"
+                      }`}
+                    >
+                      <span>{section.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
               {/* Mobile Download Resume */}
-              <a
-                href="/Hassan Ali [Resume].pdf"
-                download
-                className="flex items-center justify-center gap-2 rounded-xl border border-primary-accent/30 bg-primary-accent/10 px-4 py-3 text-center text-xs font-semibold uppercase tracking-wider text-primary-accent transition-all hover:bg-primary-accent/20"
-                onClick={() => setIsOpen(false)}
-              >
-                <Download className="h-4 w-4" />
-                <span>Download Resume</span>
-              </a>
-            </div>
-          </motion.div>
+              <div className="pt-6 border-t border-white/5">
+                <a
+                  href="/Hassan Ali [Resume].pdf"
+                  download
+                  className="flex items-center justify-center gap-2 rounded-2xl border border-primary-accent/30 bg-primary-accent/10 px-4 py-3.5 text-center text-xs font-bold uppercase tracking-wider text-primary-accent transition-all hover:bg-primary-accent/20 min-h-[48px]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>

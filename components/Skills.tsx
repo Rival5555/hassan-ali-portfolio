@@ -39,24 +39,24 @@ const SKILL_DATA: SkillCategory[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative space-y-10 py-3 scroll-mt-20">
+    <section id="skills" className="relative space-y-10 py-12 md:py-16 lg:py-24 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-violet absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-fluid-h2 font-bold tracking-tight text-white">
           Technical{" "}
           <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
             Competencies
           </span>
         </h2>
         <div className="h-1 w-20 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full" />
-        <p className="max-w-xl text-sm text-muted-text pt-2 leading-relaxed">
+        <p className="max-w-xl text-fluid-body text-muted-text pt-2 leading-relaxed">
           A targeted stack specialized in constructing high-performing model architectures and orchestrating production deployments.
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {SKILL_DATA.map((category, idx) => {
           const Icon = category.icon;
           return (

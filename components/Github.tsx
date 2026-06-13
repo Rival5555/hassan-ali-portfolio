@@ -72,19 +72,19 @@ export default function Github() {
   );
 
   return (
-    <section id="github" className="relative space-y-10 py-3 scroll-mt-20">
+    <section id="github" className="relative space-y-10 py-12 md:py-16 lg:py-24 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute left-1/3 bottom-1/4 h-80 w-80 rounded-full" />
 
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-fluid-h2 font-bold tracking-tight text-white">
           GitHub{" "}
           <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
             Metrics
           </span>
         </h2>
         <div className="h-1 w-20 bg-gradient-to-r from-primary-accent to-secondary-accent rounded-full" />
-        <p className="max-w-xl text-sm text-muted-text pt-2 leading-relaxed">
+        <p className="max-w-xl text-fluid-body text-muted-text pt-2 leading-relaxed">
           Tracking commit telemetry, repository architectures, and continuous developer integrations.
         </p>
       </div>
@@ -98,7 +98,7 @@ export default function Github() {
               <span className="font-mono text-[10px] text-muted-text uppercase font-bold tracking-wider">api.github.com/Rival5555</span>
             </div>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-4">
               <div className="bg-slate-950/40 p-3 rounded-2xl border border-white/5">
                 <div className="flex items-center gap-1.5 text-muted-text mb-1">
                   <BookOpen className="h-3.5 w-3.5 text-primary-accent" />
@@ -133,7 +133,7 @@ export default function Github() {
               href="https://github.com/Rival5555"
               target="_blank"
               rel="noreferrer"
-              className="w-full flex items-center justify-center gap-2 rounded-xl bg-slate-900 border border-white/10 hover:border-primary-accent/40 py-2.5 text-xs font-semibold text-text transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 rounded-xl bg-slate-900 border border-white/10 hover:border-primary-accent/40 py-3 text-xs font-semibold text-text transition-colors cursor-pointer min-h-[44px]"
             >
               <span>Explore GitHub Repositories</span>
             </a>
@@ -141,10 +141,15 @@ export default function Github() {
         </div>
 
         {/* Contributions grid */}
-        <div className="glass-card rounded-3xl p-5 border border-white/5 space-y-4 flex flex-col justify-between overflow-x-auto">
-          <div className="space-y-1">
-            <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">{stats.commits + 80} Contributions in the last year</h3>
-            <p className="text-[10px] text-muted-text">Aggregated developer commit logs, issue openings, and pull request validations.</p>
+        <div className="glass-card rounded-3xl p-5 border border-white/5 space-y-4 flex flex-col justify-between overflow-x-auto no-scrollbar">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
+            <div className="space-y-1">
+              <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">{stats.commits + 80} Contributions in the last year</h3>
+              <p className="text-[10px] text-muted-text">Aggregated developer commit logs, issue openings, and pull request validations.</p>
+            </div>
+            <span className="inline-flex lg:hidden text-[9px] font-bold uppercase tracking-widest text-primary-accent/80 font-mono bg-primary-accent/5 px-2.5 py-1 rounded-xl border border-primary-accent/10 w-fit select-none">
+              ← Swipe to scroll →
+            </span>
           </div>
 
           <div className="pt-2 min-w-[560px]">

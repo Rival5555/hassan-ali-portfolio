@@ -6,11 +6,11 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-background relative overflow-hidden py-8">
+    <footer className="border-t border-white/5 bg-background relative overflow-hidden py-10 md:py-12">
       {/* Subtle background glow */}
       <div className="absolute bottom-0 right-1/3 w-96 h-20 bg-secondary-accent/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 text-xs sm:flex-row sm:px-6 lg:px-4">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 text-xs sm:flex-row md:px-6 lg:px-8">
         <div className="text-center sm:text-left space-y-1">
           <p className="text-text/90 font-medium text-sm">
             &copy; {year} <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-bold">Hassan Ali</span>. All rights reserved.
