@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Send, CheckCircle2, FileText } from "lucide-react";
 
 // Configure your Formspree endpoint here (e.g. "https://formspree.io/f/your_form_id")
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xpqeogzw";
 
 export default function Contact() {
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
