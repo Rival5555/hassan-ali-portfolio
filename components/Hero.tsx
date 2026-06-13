@@ -135,11 +135,6 @@ export default function Hero() {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const marqueeTags = [
-    "Python", "PyTorch", "TensorFlow", "Scikit-Learn", "OpenCV", 
-    "FastAPI", "Docker", "MLflow", "AWS", "GCP", "Linux", "Git"
-  ];
-
   return (
     <section
       id="home"
@@ -284,35 +279,6 @@ export default function Hero() {
 
       </div>
 
-      {/* TECH STACK STRIP - INFINITE SCROLL MARQUEE */}
-      <div className="mt-6 pt-4 border-t border-white/5 w-full relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-        
-        <div className="flex select-none overflow-hidden gap-8 py-2 w-full">
-          <div className="flex min-w-full shrink-0 items-center justify-around gap-8 animate-marquee">
-            {marqueeTags.map((tag, tagIdx) => (
-              <span
-                key={tagIdx}
-                className="text-sm font-bold uppercase tracking-widest text-muted-text/50 font-mono hover:text-primary-accent transition-colors"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex min-w-full shrink-0 items-center justify-around gap-8 animate-marquee" aria-hidden="true">
-            {marqueeTags.map((tag, tagIdx) => (
-              <span
-                key={`dup-${tagIdx}`}
-                className="text-sm font-bold uppercase tracking-widest text-muted-text/50 font-mono hover:text-primary-accent transition-colors"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Floating Badges and Marquee Keyframes Inline Style */}
       <style jsx global>{`
         @keyframes scan {
@@ -322,17 +288,6 @@ export default function Hero() {
           50% {
             top: 100%;
           }
-        }
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
         }
 
         /* Floating Badge Animations */
