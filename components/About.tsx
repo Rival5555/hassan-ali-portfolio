@@ -87,12 +87,12 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="relative space-y-10 py-8 scroll-mt-20">
+    <section id="about" className="relative space-y-10 py-12 md:py-16 lg:py-24 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute right-0 top-1/4 h-80 w-80 rounded-full" />
 
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-fluid-h2 font-bold tracking-tight text-white">
           About{" "}
           <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-black">
             Me
@@ -131,17 +131,17 @@ export default function About() {
 
         {/* Right: Tabs and biography */}
         <div className="space-y-6">
-          <div className="space-y-3">
-            <h3 className="text-lg font-bold text-white tracking-wide">
+          <div className="space-y-3 text-center lg:text-left">
+            <h3 className="text-fluid-sub font-bold text-white tracking-wide">
               Engineering Scalable Machine Learning Solutions
             </h3>
-            <p className="text-sm text-muted-text leading-relaxed">
+            <p className="text-fluid-body text-muted-text leading-relaxed mx-auto lg:mx-0">
               I am an aspiring Machine Learning Engineer focused on writing highly optimized deep learning workloads and deploying them into secure production environments. I bring a strong background in Artificial Intelligence systems, automated model tracking, and cloud orchestrations.
             </p>
           </div>
 
           {/* Tabs header */}
-          <div className="flex border-b border-white/5 pb-2 gap-2">
+          <div className="flex border-b border-white/5 pb-2 gap-2 overflow-x-auto no-scrollbar whitespace-nowrap">
             {[
               { id: "expertise", label: "Expertise", icon: BrainCircuit },
               { id: "education", label: "Education", icon: BookOpen },
