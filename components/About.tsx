@@ -135,9 +135,17 @@ export default function About() {
             <h3 className="text-fluid-sub font-bold text-white tracking-wide">
               Engineering Scalable Machine Learning Solutions
             </h3>
-            <p className="text-fluid-body text-muted-text leading-relaxed mx-auto lg:mx-0">
-              I am an aspiring Machine Learning Engineer focused on writing highly optimized deep learning workloads and deploying them into secure production environments. I bring a strong background in Artificial Intelligence systems, automated model tracking, and cloud orchestrations.
-            </p>
+            <div className="space-y-4 text-fluid-body text-muted-text leading-relaxed mx-auto lg:mx-0">
+              <p>
+                I am Hassan Ali, a Machine Learning Engineer based in Pakistan specializing in designing and deploying end-to-end AI systems. I focus on translating complex mathematical concepts into reliable, production-ready applications. I am motivated by the challenge of building concrete systems that operate robustly under real-world constraints.
+              </p>
+              <p>
+                My technical approach centers on writing clean, optimized code and designing scalable pipelines using PyTorch, FastAPI, and Docker. I view model training as only one part of the pipeline, dedicating equal attention to data validation, model versioning, and latency performance. This comprehensive view ensures that the systems I build are stable, measurable, and easy to maintain over time.
+              </p>
+              <p>
+                Currently, I am designing automated MLOps pipelines to streamline model deployment and testing on edge architectures. If you need assistance engineering a scalable machine learning pipeline or want to discuss deployable AI systems, feel free to reach out.
+              </p>
+            </div>
           </div>
 
           {/* Tabs header */}
