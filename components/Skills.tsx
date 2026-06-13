@@ -39,7 +39,7 @@ const SKILL_DATA: SkillCategory[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative space-y-10 py-12 md:py-16 lg:py-24 scroll-mt-20">
+    <section id="skills" className="relative space-y-10 py-6 md:py-8 lg:py-12 scroll-mt-20">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-violet absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 

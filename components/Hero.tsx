@@ -143,7 +143,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex flex-col justify-center overflow-hidden pt-6 pb-12 md:pt-8 md:pb-16 lg:pt-12 lg:pb-24 scroll-mt-20"
+      className="relative flex flex-col justify-center overflow-hidden pt-6 pb-6 md:pt-8 md:pb-8 lg:pt-12 lg:pb-12 scroll-mt-20"
     >
       {/* Interactive Particles Canvas */}
       <canvas
@@ -285,7 +285,7 @@ export default function Hero() {
       </div>
 
       {/* TECH STACK STRIP - INFINITE SCROLL MARQUEE */}
-      <div className="mt-8 pt-6 border-t border-white/5 w-full relative overflow-hidden">
+      <div className="mt-6 pt-4 border-t border-white/5 w-full relative overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         
