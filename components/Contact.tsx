@@ -59,8 +59,9 @@ export default function Contact() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const name = (formData.get("name") as string) || "";
     const email = (formData.get("email") as string) || "";
     const message = (formData.get("message") as string) || "";
@@ -104,13 +105,16 @@ export default function Contact() {
 
       if (response.ok) {
         setFormState("success");
-        event.currentTarget.reset();
+        form.reset();
         setTouched({});
         setErrors({});
       } else {
+        const errText = await response.text();
+        console.error("Formspree server error:", response.status, errText);
         setFormState("error");
       }
     } catch (err) {
+      console.error("Formspree network/CORS error:", err);
       setFormState("error");
     }
   };
