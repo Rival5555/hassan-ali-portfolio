@@ -4,19 +4,41 @@ import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Send, CheckCircle2, FileText } from "lucide-react";
 
+// Configure your Formspree endpoint here (e.g. "https://formspree.io/f/your_form_id")
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 export default function Contact() {
-  const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, required } = event.target;
+    const { name, value } = event.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
 
-    if (required && !value.trim()) {
-      setErrors((prev) => ({ ...prev, [name]: `${name.charAt(0).toUpperCase() + name.slice(1)} is required` }));
-    } else if (name === "email" && value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      setErrors((prev) => ({ ...prev, email: "Please enter a valid email address" }));
+    let errorMsg = "";
+    if (name === "name") {
+      if (!value.trim()) {
+        errorMsg = "Name is required";
+      } else if (value.trim().length < 2) {
+        errorMsg = "Name must be at least 2 characters";
+      }
+    } else if (name === "email") {
+      if (!value.trim()) {
+        errorMsg = "Email is required";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        errorMsg = "Please enter a valid email address";
+      }
+    } else if (name === "message") {
+      if (!value.trim()) {
+        errorMsg = "Message is required";
+      } else if (value.trim().length < 10) {
+        errorMsg = "Message must be at least 10 characters";
+      }
+    }
+
+    if (errorMsg) {
+      setErrors((prev) => ({ ...prev, [name]: errorMsg }));
     } else {
       setErrors((prev) => {
         const next = { ...prev };
@@ -27,33 +49,40 @@ export default function Contact() {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    if (value.trim()) {
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[name];
-        return next;
-      });
-    }
+    const { name } = event.target;
+    setErrors((prev) => {
+      const next = { ...prev };
+      delete next[name];
+      return next;
+    });
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Validate all fields on submit
     const formData = new FormData(event.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
+    const name = (formData.get("name") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const message = (formData.get("message") as string) || "";
 
     const newErrors: Record<string, string> = {};
-    if (!name.trim()) newErrors.name = "Name is required";
+    if (!name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+
     if (!email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (!message.trim()) newErrors.message = "Message is required";
+
+    if (!message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -61,15 +90,26 @@ export default function Contact() {
       return;
     }
 
-    setFormState("sending");
+    setFormState("loading");
 
     try {
-      // Simulate API request
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setFormState("success");
-      event.currentTarget.reset();
-      setTouched({});
-      setErrors({});
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        setFormState("success");
+        event.currentTarget.reset();
+        setTouched({});
+        setErrors({});
+      } else {
+        setFormState("error");
+      }
     } catch (err) {
       setFormState("error");
     }
@@ -111,9 +151,8 @@ export default function Contact() {
               <div className="p-4 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <CheckCircle2 className="h-10 w-10" />
               </div>
-              <h3 className="text-lg font-bold text-white uppercase tracking-wide font-mono">Transmission Complete</h3>
               <p className="text-sm text-emerald-400/90 max-w-sm">
-                Message sent! I&apos;ll get back to you within 24 hours.
+                Message sent! I&apos;ll reply within 24 hours.
               </p>
               <button
                 onClick={() => setFormState("idle")}
@@ -194,37 +233,30 @@ export default function Contact() {
                 )}
               </div>
 
-              {formState === "error" && (
-                <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4 text-xs md:text-sm text-red-400 text-left flex items-start gap-2.5">
-                  <span className="font-semibold">Error:</span>
-                  <span>Something went wrong. Try emailing me directly at <a href="mailto:hassanali93r@gmail.com" className="underline font-bold">hassanali93r@gmail.com</a>.</span>
-                </div>
-              )}
-
               <button
                 type="submit"
-                disabled={formState === "sending"}
+                disabled={formState === "loading"}
                 className="w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-primary-accent to-secondary-accent py-3 text-sm font-bold text-white shadow-lg shadow-primary-accent/10 hover:shadow-secondary-accent/20 transition-all hover:scale-101 disabled:opacity-75 cursor-pointer"
               >
-                {formState === "idle" && (
-                  <>
-                    <span>Send Message</span>
-                    <Send className="h-4 w-4" />
-                  </>
-                )}
-                {formState === "sending" && (
+                {formState === "loading" ? (
                   <>
                     <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                    <span>Transmitting payload...</span>
+                    <span>Sending...</span>
                   </>
-                )}
-                {formState === "error" && (
+                ) : (
                   <>
-                    <span>Retry Send</span>
+                    <span>Send message</span>
                     <Send className="h-4 w-4" />
                   </>
                 )}
               </button>
+
+              {formState === "error" && (
+                <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4 text-xs md:text-sm text-red-400 text-left flex items-start gap-2.5">
+                  <span className="font-semibold">Error:</span>
+                  <span>Something went wrong. Email me directly at <a href="mailto:hassanali93r@gmail.com" className="underline font-bold">hassanali93r@gmail.com</a></span>
+                </div>
+              )}
             </form>
           )}
         </motion.div>
