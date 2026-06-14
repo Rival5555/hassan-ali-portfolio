@@ -7,8 +7,6 @@ type Project = {
   title: string;
   category: string;
   problemStatement: string;
-  tags: string[];
-  achievements: string[];
   github: string;
   demo: string;
 };
@@ -18,12 +16,6 @@ const PROJECTS_DATA: Project[] = [
     title: "Diabetic Retinopathy Classification",
     category: "Deep Learning · Medical Imaging",
     problemStatement: "Manual screening of diabetic retinopathy is slow and prone to human diagnostic error. This project automates diagnostic grading to assist ophthalmologists with high reliability.",
-    tags: ["PyTorch", "CNN", "FastAPI", "Docker", "Model Quantization"],
-    achievements: [
-      "Optimized ResNet/EfficientNet backbones using progressive resizing to resolve fine lesion details.",
-      "Mitigated clinical dataset class imbalance (1:10) through focal loss adjustments and RandAugment.",
-      "Quantized weights from FP32 to FP16, lowering runtime footprint by 50% without drop in Kappa score."
-    ],
     github: "https://github.com/Rival5555",
     demo: "#",
   },
@@ -31,12 +23,6 @@ const PROJECTS_DATA: Project[] = [
     title: "Automated MLOps Training Pipeline",
     category: "Infrastructure · Cloud Automation",
     problemStatement: "Production models degrade quickly due to real-world data drift. This automated framework monitors features and retrains endpoints without manual intervention.",
-    tags: ["AWS SageMaker", "MLflow", "CI/CD", "Docker", "Python SDK"],
-    achievements: [
-      "Established automatic data drift validation using Population Stability Index tests in SageMaker.",
-      "Integrated automated retraining triggers using MLflow webhooks, tracking parameters and loss checkpoints.",
-      "Engineered blue-green router configurations to swap active endpoints with zero interruption."
-    ],
     github: "https://github.com/Rival5555",
     demo: "#",
   },
@@ -96,30 +82,7 @@ export default function Projects() {
                 </div>
 
 
-                {/* Key Achievements */}
-                <div className="space-y-1.5">
-                  <span className="text-[9px] uppercase font-bold text-muted-text/80 tracking-wider font-mono">Key Achievements</span>
-                  <ul className="space-y-1.5">
-                    {project.achievements.map((ach, achIdx) => (
-                      <li key={achIdx} className="text-xs text-muted-text flex gap-2 items-start leading-relaxed">
-                        <span className="h-1.5 w-1.5 rounded-full bg-secondary-accent shrink-0 mt-1.5" />
-                        <span>{ach}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
-                {/* Tech tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/5 bg-slate-900/60 px-2.5 py-1 text-[10px] font-medium tracking-wide text-text/80"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
 
               {/* Action buttons */}
