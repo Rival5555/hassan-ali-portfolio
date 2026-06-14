@@ -1,14 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Info, ChevronDown, ChevronUp } from "lucide-react";
-
-type CaseStudyDetail = {
-  challenge: string;
-  approach: string;
-  outcome: string;
-};
+import { motion } from "framer-motion";
+import { Github, ExternalLink } from "lucide-react";
 
 type Project = {
   title: string;
@@ -16,7 +9,6 @@ type Project = {
   problemStatement: string;
   tags: string[];
   achievements: string[];
-  caseStudy: CaseStudyDetail;
   github: string;
   demo: string;
 };
@@ -32,11 +24,6 @@ const PROJECTS_DATA: Project[] = [
       "Mitigated clinical dataset class imbalance (1:10) through focal loss adjustments and RandAugment.",
       "Quantized weights from FP32 to FP16, lowering runtime footprint by 50% without drop in Kappa score."
     ],
-    caseStudy: {
-      challenge: "The clinical dataset had a massive class imbalance where severe retinopathy instances were highly rare, causing standard Cross-Entropy classifiers to skew benign.",
-      approach: "We implemented custom weighted focal loss coupled with progressive image resolution scaling (from 224 to 512px) to detect early-stage retinal hemorrhages.",
-      outcome: "Improved Quadratic Weighted Kappa to 0.92, achieving accuracy metrics matching junior radiologist benchmarks in staging speed."
-    },
     github: "https://github.com/Rival5555",
     demo: "#",
   },
@@ -50,25 +37,12 @@ const PROJECTS_DATA: Project[] = [
       "Integrated automated retraining triggers using MLflow webhooks, tracking parameters and loss checkpoints.",
       "Engineered blue-green router configurations to swap active endpoints with zero interruption."
     ],
-    caseStudy: {
-      challenge: "Manual retraining cycles caused deployment lags of several days, leaving stale models serving active production requests.",
-      approach: "Built end-to-end automation via SageMaker SDK and GitHub Actions pipelines that validate model drift thresholds.",
-      outcome: "Retraining triggers fire automatically within 5 minutes of drift identification, reducing deployment cycles by 90%."
-    },
     github: "https://github.com/Rival5555",
     demo: "#",
   },
 ];
 
 export default function Projects() {
-  const [expandedCards, setExpandedCards] = useState<Record<number, boolean>>({});
-
-  const toggleCaseStudy = (index: number) => {
-    setExpandedCards((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
 
   return (
     <section id="projects" className="relative space-y-10 py-6 md:py-8 lg:py-12 scroll-mt-20">
@@ -90,7 +64,6 @@ export default function Projects() {
 
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS_DATA.map((project, idx) => {
-          const isExpanded = !!expandedCards[idx];
           return (
             <motion.article
               key={project.title}
@@ -149,38 +122,6 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Case Study Collapsible Accordion */}
-              <AnimatePresence>
-                {isExpanded && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden border-t border-white/5 pt-4 mt-4"
-                  >
-                    <div className="space-y-3.5 rounded-2xl bg-slate-950/60 p-4 border border-white/5 text-xs text-muted-text leading-relaxed">
-                      <div className="flex items-center gap-1.5 text-[9px] font-mono font-bold text-primary-accent uppercase tracking-wider">
-                        <Info className="h-3.5 w-3.5" />
-                        <span>Detailed Case Study</span>
-                      </div>
-                      <div>
-                        <span className="block font-bold text-text/90 mb-0.5">The Challenge:</span>
-                        <p>{project.caseStudy.challenge}</p>
-                      </div>
-                      <div>
-                        <span className="block font-bold text-text/90 mb-0.5">The Approach:</span>
-                        <p>{project.caseStudy.approach}</p>
-                      </div>
-                      <div>
-                        <span className="block font-bold text-text/90 mb-0.5">The Outcome:</span>
-                        <p>{project.caseStudy.outcome}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
               {/* Action buttons */}
               <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-white/5">
                 <a
@@ -199,13 +140,6 @@ export default function Projects() {
                   <ExternalLink className="h-3.5 w-3.5" />
                   <span>Live Demo</span>
                 </a>
-                <button
-                  onClick={() => toggleCaseStudy(idx)}
-                  className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-primary-accent to-secondary-accent py-3 text-xs font-bold text-white shadow-md shadow-primary-accent/10 hover:shadow-secondary-accent/20 transition-all hover:scale-101 cursor-pointer min-h-[44px]"
-                >
-                  <span>Case Study</span>
-                  {isExpanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
-                </button>
               </div>
             </motion.article>
           );
