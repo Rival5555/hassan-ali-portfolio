@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-            <span className="text-[10px] text-muted-text font-mono">ML Engineer</span>
+            <span className="text-[10px] text-muted-text font-mono">AI/ML Engineer</span>
           </div>
         </button>
 
