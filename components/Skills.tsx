@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, Cpu, Cloud, Code2 } from "lucide-react";
+import { Brain, Cloud, Code2 } from "lucide-react";
 
 type SkillGroup = {
   title: string;
@@ -30,20 +30,7 @@ const SKILLS_DATA: SkillGroup[] = [
       "Model Quantization"
     ]
   },
-  {
-    title: "Embedded / IoT",
-    icon: Cpu,
-    color: "violet",
-    skills: [
-      "ESP32",
-      "Arduino",
-      "Raspberry Pi",
-      "Embedded C/C++",
-      "UART / I2C / SPI",
-      "Sensors & Actuators",
-      "FreeRTOS"
-    ]
-  },
+
   {
     title: "Backend & Infra",
     icon: Cloud,

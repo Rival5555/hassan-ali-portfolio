@@ -41,24 +41,6 @@ const PROJECTS_DATA: Project[] = [
     demo: "#",
   },
   {
-    title: "Predictive Air Quality IoT System",
-    category: "Time-Series AI · Embedded IoT",
-    problemStatement: "Air quality indices vary rapidly, making active preventative ventilation impossible without early forecasts. This system forecasts pollution levels on edge hardware.",
-    tags: ["ESP32", "LSTM", "Firebase", "TensorFlow", "IoT Platform"],
-    achievements: [
-      "Built time-series forecasting utilizing stacked LSTMs to predict air quality degradation 3 hours ahead.",
-      "Synchronized physical ESP32 sensors (PM2.5, CO2, Temp) to Firebase with write latencies under 2.5s.",
-      "Configured lightweight firmware in Embedded C to filter sensor noise directly on-chip."
-    ],
-    caseStudy: {
-      challenge: "Edge microcontrollers have tiny memory footprints (SRAM < 512KB), preventing standard multi-layer RNN deployment.",
-      approach: "We designed a lightweight time-series model using TensorFlow Lite, quantizing parameters to 8-bit integers.",
-      outcome: "Model size dropped to 12 MB with forecast computation taking 4ms, running fully on low-power devices."
-    },
-    github: "https://github.com/Rival5555",
-    demo: "#",
-  },
-  {
     title: "Automated MLOps Training Pipeline",
     category: "Infrastructure · Cloud Automation",
     problemStatement: "Production models degrade quickly due to real-world data drift. This automated framework monitors features and retrains endpoints without manual intervention.",

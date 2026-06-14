@@ -50,8 +50,8 @@ export default function About() {
             <div>
               <span className="text-xs text-primary-accent font-semibold font-mono">2023 - Onward</span>
               <h4 className="text-base font-bold text-white leading-snug">Bachelor of Science in Artificial Intelligence</h4>
-              <p className="text-xs text-muted-text">Specialization in Deep Learning & Embedded AI Systems</p>
-              <p className="text-[11px] text-muted-text/80 mt-1.5">Key coursework: Neural Networks, Machine Learning Architectures, Distributed Systems, Probability Models, Embedded Signal Processing.</p>
+              <p className="text-xs text-muted-text">Specialization in Deep Learning & Machine Learning Systems</p>
+              <p className="text-[11px] text-muted-text/80 mt-1.5">Key coursework: Neural Networks, Machine Learning Architectures, Distributed Systems, Probability Models, Computer Vision, NLP.</p>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function About() {
           </div>
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-secondary-accent" />
-            <span className="text-xs text-text font-medium font-mono">Compile models for ultra-low latency inference on edge systems</span>
+            <span className="text-xs text-text font-medium font-mono">Optimize models for ultra-low latency inference in production</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-emerald-500" />

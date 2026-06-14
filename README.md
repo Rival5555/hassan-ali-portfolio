@@ -79,7 +79,6 @@ Hi there! I am an aspiring **AI Engineer** with a strong foundation in machine l
 
 | Project Name | Description | Tech Stack | Links |
 | :--- | :--- | :--- | :--- |
-| **Air Quality Monitoring Pipeline** | Real-time air quality tracking synced to Firebase and visualized via live dashboard. | `ESP32`, `Python`, `Firebase`, `IoT` | [🔗 Repo](#) <!-- Add Repo Link here --> |
 | **Diabetic Retinopathy Classifier** | CNN-based deep learning model for classifying retinopathy stages from fundus imagery. | `PyTorch`, `CNNs`, `FastAPI` | [🔗 Repo](#) <!-- Add Repo Link here --> |
 | **SageMaker Inference API** | Scalable REST API for model inference deployed directly using AWS SageMaker endpoints. | `AWS SageMaker`, `FastAPI`, `Docker` | [🔗 Repo](#) <!-- Add Repo Link here --> |
 | **Automated ML Training Pipeline** | CI/CD pipeline triggering automated model retraining and MLflow tracking upon data updates. | `GitHub Actions`, `MLflow`, `scikit-learn` | [🔗 Repo](#) <!-- Add Repo Link here --> |

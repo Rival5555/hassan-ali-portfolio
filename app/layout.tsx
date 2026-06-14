@@ -11,15 +11,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Hassan Ali | ML & IoT Engineer",
+  title: "Hassan Ali | Machine Learning Engineer",
   description:
-    "Portfolio of Hassan Ali, showcasing end-to-end AI/ML systems and production-ready IoT solutions. Experienced in designing deep learning pipelines, optimizing model architectures, and deploying full-stack web applications at scale.",
+    "Portfolio of Hassan Ali, showcasing end-to-end AI/ML systems. Experienced in designing deep learning pipelines, optimizing model architectures, and deploying full-stack web applications at scale.",
   keywords: [
     "ML Engineer",
     "Machine Learning Engineer",
     "Deep Learning Developer",
-    "IoT Developer",
-    "IoT Engineer",
     "React Developer",
     "React.js Developer",
     "Next.js Developer",
@@ -27,9 +25,9 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://hassan-ali-portfolio-nine.vercel.app"),
   openGraph: {
-    title: "Hassan Ali | ML & IoT Engineer",
+    title: "Hassan Ali | Machine Learning Engineer",
     description:
-      "Portfolio of Hassan Ali, showcasing end-to-end AI/ML systems and production-ready IoT solutions. Experienced in designing deep learning pipelines, optimizing model architectures, and deploying full-stack web applications at scale.",
+      "Portfolio of Hassan Ali, showcasing end-to-end AI/ML systems. Experienced in designing deep learning pipelines, optimizing model architectures, and deploying full-stack web applications at scale.",
     type: "website",
     url: "https://hassan-ali-portfolio-nine.vercel.app/",
     images: [
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hassan Ali | ML & IoT Engineer Portfolio Preview",
+        alt: "Hassan Ali | Machine Learning Engineer Portfolio Preview",
       },
     ],
   },
