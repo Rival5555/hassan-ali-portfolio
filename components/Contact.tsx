@@ -303,7 +303,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono">LinkedIn Profile</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-secondary-accent transition-colors">hasanali09</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-secondary-accent transition-colors">Hassan Ali</span>
                 </div>
               </a>
               <a
