@@ -64,7 +64,7 @@ export default function Navbar() {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background lg:bg-background/80 backdrop-blur-none lg:backdrop-blur-xl"
     >
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
