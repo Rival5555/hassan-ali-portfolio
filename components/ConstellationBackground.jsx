@@ -165,8 +165,10 @@ export default function ConstellationBackground() {
       // Draw connections (lines)
       ctx.lineWidth = 0.6;
       for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
+        
+        // Connect to other particles
         for (let j = i + 1; j < particles.length; j++) {
-          const p1 = particles[i];
           const p2 = particles[j];
           const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
 
@@ -178,6 +180,22 @@ export default function ConstellationBackground() {
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
+          }
+        }
+
+        // Connect to mouse cursor
+        if (mouse.x !== null && mouse.y !== null) {
+          const mDist = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+          if (mDist < mouseRadius) {
+            // Smooth fade out based on distance
+            const alpha = (1 - mDist / mouseRadius) * 0.25;
+            ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+            ctx.lineWidth = 0.8; // slightly thicker for interactive mouse lines
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+            ctx.lineWidth = 0.6; // restore width
           }
         }
       }
