@@ -70,7 +70,7 @@ export default function ConstellationBackground() {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // Re-initialize particles to fit the new screen bounds
       if (particles.length === 0) {
