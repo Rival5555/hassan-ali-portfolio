@@ -14,12 +14,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex flex-col justify-center overflow-hidden pt-6 pb-6 md:pt-8 md:pb-8 lg:pt-12 lg:pb-12 scroll-mt-20 scanlines"
+      className="relative flex flex-col justify-center overflow-hidden pt-6 pb-6 md:pt-8 md:pb-8 lg:pt-12 lg:pb-12 scroll-mt-20 scanlines bg-[#0a0a0a]"
     >
-
-      {/* Ambient backgrounds */}
-      <div className="pointer-events-none absolute -top-40 left-1/4 h-[400px] w-[400px] rounded-full bg-primary-accent/10 blur-[120px] animate-pulse-glow" />
-      <div className="pointer-events-none absolute -bottom-40 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-accent/10 blur-[120px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
+      {/* Ambient background glows */}
+      <div className="pointer-events-none absolute -top-40 left-1/4 h-[400px] w-[400px] rounded-full bg-[#00f5d4]/5 blur-[120px] animate-pulse-glow" />
+      <div className="pointer-events-none absolute -bottom-40 right-1/4 h-[400px] w-[400px] rounded-full bg-[#00f5d4]/5 blur-[120px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
       <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         
@@ -27,7 +26,7 @@ export default function Hero() {
         <div className="space-y-6 z-10 text-center lg:text-left flex flex-col items-center lg:items-start">
           
           {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary-accent/30 bg-primary-accent/10 px-4 py-1.5 text-xs font-semibold text-primary-accent backdrop-blur-md font-mono-custom">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#00f5d4]/30 bg-[#00f5d4]/10 px-4 py-1.5 text-xs font-semibold text-[#00f5d4] backdrop-blur-md font-mono-custom">
             <Briefcase className="h-3.5 w-3.5" />
             <span>Machine Learning Engineer | AI Developer | MLOps</span>
           </div>
@@ -35,41 +34,54 @@ export default function Hero() {
           {/* Headline and Subheadline */}
           <div className="space-y-3 w-full">
             <h1 className="text-fluid-h1 font-extrabold tracking-tight text-white uppercase leading-none h1-cursor">
-              Building Production-Ready <br />
-              <span className="bg-gradient-to-r from-primary-accent via-cyan-400 to-secondary-accent bg-clip-text text-transparent font-black">
-                AI Systems
-              </span>
+              I'm Hassan, <br />
+              <span className="bg-gradient-to-r from-[#00f5d4] via-cyan-400 to-[#00f5ff] bg-clip-text text-transparent font-black">
+                I Build ML Systems
+              </span> <br />
+              That Actually Ship
             </h1>
             <p className="text-fluid-sub font-semibold text-text max-w-2xl leading-relaxed mx-auto lg:mx-0">
               I design, train, deploy, and optimize machine learning solutions that solve real-world problems at scale.
             </p>
           </div>
 
+          {/* Stat line (Subtle badge-style inline stats) */}
+          <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start pt-1">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/25 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-[#00f5d4] font-mono-custom">
+              📊 APTOS Dataset: 92% Accuracy
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text/80 font-mono-custom">
+              ⚙️ 4 Architectures Benchmarked
+            </span>
+          </div>
+
           {/* Biography narrative */}
-          <p className="text-fluid-body text-muted-text max-w-xl leading-relaxed mx-auto lg:mx-0">
-            Passionate Machine Learning Engineer specializing in Deep Learning, Computer Vision, NLP, and MLOps. Experienced in developing end-to-end AI systems from data pipelines to production deployment.
+          <p className="text-fluid-body text-muted-text max-w-xl leading-relaxed mx-auto lg:mx-0 font-mono-custom">
+            I engineer scalable machine learning systems and deploy them to production.
           </p>
 
-
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-6 pt-2 w-full sm:w-auto font-mono-custom">
+            {/* Primary CTA */}
             <button
               onClick={() => handleScroll("projects")}
-              className="group flex items-center justify-center gap-2 rounded-full btn-primary-custom px-6 py-3 text-sm font-bold transition-all hover:-translate-y-0.5 hover:scale-103 cursor-pointer w-full sm:w-auto min-h-[44px] font-mono-custom"
+              className="group flex items-center justify-center gap-2 rounded-full bg-[#00f5d4] hover:bg-[#00f5d4]/90 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-[#00f5d4]/15 transition-all hover:-translate-y-0.5 hover:scale-103 cursor-pointer w-full sm:w-auto min-h-[44px]"
             >
               <span>View Projects</span>
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
+            {/* Secondary CTA */}
             <a
               href="/Hassan Ali [Resume].pdf"
               download
-              className="flex items-center justify-center gap-2 rounded-full btn-secondary-custom px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 w-full sm:w-auto min-h-[44px] font-mono-custom"
+              className="flex items-center justify-center gap-2 rounded-full border border-[#00f5d4] text-[#00f5d4] hover:bg-[#00f5d4]/10 bg-transparent px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 w-full sm:w-auto min-h-[44px]"
             >
               <span>Download Resume</span>
             </a>
+            {/* Tertiary CTA */}
             <button
               onClick={() => handleScroll("contact")}
-              className="flex items-center justify-center gap-2 rounded-full btn-secondary-custom px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto min-h-[44px] font-mono-custom"
+              className="flex items-center justify-center gap-2 text-muted-text hover:text-[#00f5d4] transition-colors text-sm font-semibold cursor-pointer w-full sm:w-auto min-h-[44px]"
             >
               <Mail className="h-4 w-4" />
               <span>Contact Me</span>
@@ -78,16 +90,15 @@ export default function Hero() {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[380px] lg:min-h-[420px] max-w-sm mx-auto w-full">
+        <div className="relative z-10 flex flex-col items-center justify-center max-w-sm mx-auto w-full gap-6">
           {/* Avatar floating boundary wrapper */}
           <div className="relative group p-4">
-            
             {/* Ambient blur behind headshot */}
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary-accent to-secondary-accent opacity-25 blur-lg transition duration-700 group-hover:opacity-45" />
+            <div className="absolute -inset-1 rounded-full bg-[#00f5d4]/15 opacity-25 blur-lg transition duration-700 group-hover:opacity-45" />
 
             {/* Circular Headshot Card */}
-            <div className="relative h-48 w-48 rounded-full bg-[#0b0f19] p-2 border border-white/10 overflow-hidden shadow-2xl">
-              <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-950">
+            <div className="relative h-48 w-48 rounded-full bg-[#0a0a0a] p-2 border border-[#00f5d4]/20 overflow-hidden shadow-2xl">
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-[#0a0a0a]">
                 <Image
                   src="/hassan-portrait.jpg"
                   alt="Hassan Ali Portrait"
@@ -96,51 +107,55 @@ export default function Hero() {
                   className="object-cover transition-transform duration-750 group-hover:scale-105"
                   sizes="12rem"
                 />
-                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent opacity-70 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
+                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00f5d4] to-transparent opacity-70 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
+              </div>
+            </div>
+          </div>
+
+          {/* Labeled Skills layout */}
+          <div className="w-full space-y-4 text-left">
+            {/* Row 1: Core ML */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[#00f5d4]/80 font-mono-custom block">Core ML</span>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  🐍 Python
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  🔥 PyTorch
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  🤖 TensorFlow
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  🌊 OpenCV
+                </span>
               </div>
             </div>
 
-            {/* Absolute Orbiting badges (hidden on mobile, floating on desktop/tablet) */}
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-1 top-2 -left-8">
-              🐍 Python
-            </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-2 top-0 -right-8">
-              🔥 PyTorch
-            </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-3 top-24 -left-12">
-              🌊 OpenCV
-            </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-4 top-20 -right-14">
-              📦 Docker
-            </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-5 bottom-8 -left-8">
-              ⚡ FastAPI
-            </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-6 bottom-4 -right-6">
-              ☁️ AWS
-            </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-7 -bottom-6 left-12">
-              🤖 TensorFlow
-            </span>
-          </div>
-
-          {/* Mobile Tag list (only visible under sm) */}
-          <div className="flex flex-wrap gap-2 justify-center pt-6 sm:hidden w-full">
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🐍 Python</span>
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🔥 PyTorch</span>
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🌊 OpenCV</span>
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">📦 Docker</span>
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">⚡ FastAPI</span>
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">☁️ AWS</span>
-            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🤖 TensorFlow</span>
+            {/* Row 2: Deploy & Infra */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[#00f5d4]/80 font-mono-custom block">Deploy & Infra</span>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  ⚡ FastAPI
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  📦 Docker
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  ☁️ AWS
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Current Focus banner below avatar */}
-          <div className="mt-8 w-full text-center">
+          <div className="w-full text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl glass-card border border-white/5 shadow-md">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f5d4] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00f5d4]"></span>
               </span>
               <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text font-mono-custom">Current Focus:</span>
               <span className="text-xs text-text font-bold font-mono-custom">Building scalable AI and MLOps solutions</span>
@@ -149,8 +164,8 @@ export default function Hero() {
         </div>
 
       </div>
-
-      {/* Floating Badges and Marquee Keyframes Inline Style */}
+      
+      {/* Scan animation */}
       <style jsx global>{`
         @keyframes scan {
           0%, 100% {
@@ -160,32 +175,6 @@ export default function Hero() {
             top: 100%;
           }
         }
-
-        /* Floating Badge Animations */
-        @keyframes float-1 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-6px) rotate(-1deg); }
-        }
-        @keyframes float-2 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-8px) rotate(2deg); }
-        }
-        @keyframes float-3 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-5px) rotate(-2deg); }
-        }
-        @keyframes float-4 {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-7px) rotate(1deg); }
-        }
-        
-        .animate-float-badge-1 { animation: float-1 4s infinite ease-in-out; }
-        .animate-float-badge-2 { animation: float-2 4.5s infinite ease-in-out; }
-        .animate-float-badge-3 { animation: float-3 5s infinite ease-in-out; }
-        .animate-float-badge-4 { animation: float-4 3.8s infinite ease-in-out; }
-        .animate-float-badge-5 { animation: float-2 4.2s infinite ease-in-out; }
-        .animate-float-badge-6 { animation: float-1 4.7s infinite ease-in-out; }
-        .animate-float-badge-7 { animation: float-3 5.2s infinite ease-in-out; }
       `}</style>
     </section>
   );
