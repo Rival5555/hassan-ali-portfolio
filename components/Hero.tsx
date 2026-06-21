@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-72px)] flex-col justify-center overflow-hidden py-8 lg:py-12 scroll-mt-20 scanlines bg-[#0a0a0a]"
+      className="relative flex min-h-[calc(100vh-72px)] flex-col justify-center overflow-hidden py-8 lg:py-12 scroll-mt-20 scanlines bg-transparent"
     >
       {/* Ambient background glows */}
       <div className="pointer-events-none absolute -top-40 left-1/4 h-[400px] w-[400px] rounded-full bg-[#00f5d4]/5 blur-[120px] animate-pulse-glow" />
