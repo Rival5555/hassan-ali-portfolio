@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-            <span className="text-[10px] text-muted-text font-mono-custom">AI/ML Engineer</span>
+            <span className="text-xs text-[#00f5ff] font-semibold font-mono-custom">AI/ML Engineer</span>
           </div>
         </button>
 
@@ -93,7 +93,7 @@ export default function Navbar() {
             <button
               key={section.id}
               onClick={() => handleScroll(section.id)}
-              className={`relative text-[10px] uppercase tracking-wider font-bold transition-colors cursor-pointer font-mono-custom ${
+              className={`relative text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer font-mono-custom ${
                 activeSection === section.id
                   ? "text-primary-accent"
                   : "text-muted-text hover:text-white"
@@ -114,7 +114,7 @@ export default function Navbar() {
           <a
             href="/Hassan Ali [Resume].pdf"
             download
-            className="flex items-center gap-1.5 rounded-full btn-primary-custom px-3.5 py-1.5 text-[10px] uppercase tracking-wider font-bold transition-all hover:-translate-y-0.5 font-mono-custom"
+            className="flex items-center gap-1.5 rounded-full btn-primary-custom px-3.5 py-1.5 text-xs uppercase tracking-wider font-bold transition-all hover:-translate-y-0.5 font-mono-custom"
           >
             <Download className="h-3.5 w-3.5" />
             <span>Resume</span>
@@ -158,7 +158,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between pb-4 border-b border-cyan-gradient-b">
                   <div className="leading-tight">
                     <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-                    <span className="text-[10px] text-muted-text font-mono-custom">Navigation Menu</span>
+                    <span className="text-xs text-muted-text font-mono-custom">Navigation Menu</span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
