@@ -10,7 +10,7 @@ export default function NeuCard({ children, className = "", hoverGlow = true, ..
   return (
     <div
       className={`rounded-2xl bg-[#1a1a2e] shadow-neu-raised p-6 border border-white/5 transition-all duration-300 ${
-        hoverGlow ? "hover:border-[#00f5d4]/20 hover:shadow-neu-glow" : ""
+        hoverGlow ? "hover:border-[#023e8a]/20 hover:shadow-neu-glow" : ""
       } ${className}`}
       {...props}
     >

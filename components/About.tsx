@@ -111,7 +111,7 @@ export default function About() {
             {/* Circular Headshot Container (Neumorphic Double Ring) */}
             <div 
               className="relative h-56 w-56 rounded-full bg-[#1a1a2e] p-2 overflow-hidden shadow-neu-raised transition-all duration-300"
-              style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(0, 245, 212, 0.4)" }}
+              style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(2, 62, 138, 0.6)" }}
             >
               <div className="relative h-full w-full overflow-hidden rounded-full bg-[#1a1a2e]">
                 <Image
@@ -123,7 +123,7 @@ export default function About() {
                   sizes="14rem"
                 />
                 {/* Subtle vertical scan line */}
-                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent opacity-85 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
+                <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-secondary-accent to-transparent opacity-85 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function About() {
                   onClick={() => setActiveTab(tab.id as TabType)}
                   className={`relative flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer font-mono-custom ${
                     isActive 
-                      ? "bg-[#1a1a2e] shadow-neu-inset text-primary-accent border border-white/5" 
+                      ? "bg-[#1a1a2e] shadow-neu-inset text-secondary-accent border border-white/5" 
                       : "text-muted-text hover:text-white"
                   }`}
                 >

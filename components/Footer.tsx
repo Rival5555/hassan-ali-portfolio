@@ -26,7 +26,7 @@ export default function Footer() {
             href="https://github.com/Rival5555"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00f5d4] hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300"
+            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00b4d8] hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300"
             aria-label="GitHub Profile"
           >
             <Github className="h-4 w-4" />
@@ -35,14 +35,14 @@ export default function Footer() {
             href="https://www.linkedin.com/in/hasanali09"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00f5d4] hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300"
+            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00b4d8] hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300"
             aria-label="LinkedIn Profile"
           >
             <Linkedin className="h-4 w-4" />
           </a>
           <a
             href="mailto:hassanali93r@gmail.com"
-            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00f5d4] hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300"
+            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00b4d8] hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300"
             aria-label="Email Contact"
           >
             <Mail className="h-4 w-4" />

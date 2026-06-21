@@ -180,7 +180,7 @@ export default function Contact() {
                     placeholder="Hassan Ali"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 border-2 border-transparent focus:border-b-[#00f5d4] ${
+                    className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 border-2 border-transparent focus:border-b-[#00b4d8] ${
                       touched.name && errors.name
                         ? "border-red-500/50 focus:border-red-500"
                         : ""
@@ -202,7 +202,7 @@ export default function Contact() {
                     placeholder="hassanali93r@gmail.com"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 border-2 border-transparent focus:border-b-[#00f5d4] ${
+                    className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 border-2 border-transparent focus:border-b-[#00b4d8] ${
                       touched.email && errors.email
                         ? "border-red-500/50 focus:border-red-500"
                         : ""
@@ -226,7 +226,7 @@ export default function Contact() {
                   placeholder="Describe your MLOps setup, deep learning training runs, or code parameters..."
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 resize-none border-2 border-transparent focus:border-b-[#00f5d4] ${
+                  className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 resize-none border-2 border-transparent focus:border-b-[#00b4d8] ${
                     touched.message && errors.message
                       ? "border-red-500/50 focus:border-red-500"
                       : ""
@@ -282,55 +282,55 @@ export default function Contact() {
             <div className="space-y-3 pt-2">
               <a
                 href="mailto:hassanali93r@gmail.com"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#023e8a]/10 text-[#00b4d8] group-hover:bg-[#023e8a] group-hover:text-white transition-all">
                   <Mail className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Email Address</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">hassanali93r@gmail.com</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00b4d8] transition-colors">hassanali93r@gmail.com</span>
                 </div>
               </a>
               <a
                 href="https://www.linkedin.com/in/hasanali09"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#023e8a]/10 text-[#00b4d8] group-hover:bg-[#023e8a] group-hover:text-white transition-all">
                   <Linkedin className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">LinkedIn Profile</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">Hassan Ali</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00b4d8] transition-colors">Hassan Ali</span>
                 </div>
               </a>
               <a
                 href="https://github.com/Rival5555"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#023e8a]/10 text-[#00b4d8] group-hover:bg-[#023e8a] group-hover:text-white transition-all">
                   <Github className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">GitHub Repositories</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">Rival5555</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00b4d8] transition-colors">Rival5555</span>
                 </div>
               </a>
               <a
                 href="/Hassan Ali [Resume].pdf"
                 download
-                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#023e8a]/10 text-[#00b4d8] group-hover:bg-[#023e8a] group-hover:text-white transition-all">
                   <FileText className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Download Resume</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">Hassan Ali [Resume].pdf</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00b4d8] transition-colors">Hassan Ali [Resume].pdf</span>
                 </div>
               </a>
             </div>

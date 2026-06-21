@@ -102,9 +102,9 @@ export default function ConstellationBackground() {
         maxRadius
       );
       
-      // Soft cyan glow: blooming from center, fading to transparent
-      radialGradient.addColorStop(0, "rgba(6, 182, 212, 0.12)");
-      radialGradient.addColorStop(0.5, "rgba(6, 182, 212, 0.03)");
+      // Soft blue glow: blooming from center, fading to transparent
+      radialGradient.addColorStop(0, "rgba(2, 62, 138, 0.18)");
+      radialGradient.addColorStop(0.5, "rgba(2, 62, 138, 0.06)");
       radialGradient.addColorStop(1, "rgba(26, 26, 46, 0)");
       
       ctx.fillStyle = radialGradient;
@@ -158,7 +158,7 @@ export default function ConstellationBackground() {
         // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(6, 182, 212, ${p.alpha})`; // Teal/Cyan particle
+        ctx.fillStyle = `rgba(0, 180, 216, ${p.alpha})`; // Teal/Cyan particle
         ctx.fill();
       });
 
@@ -175,7 +175,7 @@ export default function ConstellationBackground() {
           if (dist < connectionDistance) {
             // Smooth fade out based on distance
             const alpha = (1 - dist / connectionDistance) * 0.15;
-            ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+            ctx.strokeStyle = `rgba(2, 62, 138, ${alpha})`;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -189,7 +189,7 @@ export default function ConstellationBackground() {
           if (mDist < mouseRadius) {
             // Smooth fade out based on distance
             const alpha = (1 - mDist / mouseRadius) * 0.65; // increased opacity from 0.25 to 0.65
-            ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
+            ctx.strokeStyle = `rgba(0, 180, 216, ${alpha})`;
             ctx.lineWidth = 1.2; // increased thickness from 0.8 to 1.2
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);

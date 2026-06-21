@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-            <span className="text-xs text-[#00f5d4] font-semibold font-mono-custom">AI/ML Engineer</span>
+            <span className="text-xs text-[#00b4d8] font-semibold font-mono-custom">AI/ML Engineer</span>
           </div>
         </button>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
               onClick={() => handleScroll(section.id)}
               className={`relative text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer font-mono-custom ${
                 activeSection === section.id
-                  ? "text-primary-accent"
+                  ? "text-secondary-accent"
                   : "text-muted-text hover:text-white"
               }`}
             >
@@ -103,7 +103,7 @@ export default function Navbar() {
               {activeSection === section.id && (
                 <motion.span
                   layoutId="activeNavIndicator"
-                  className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-primary-accent shadow-[0_0_8px_rgba(0,245,212,0.6)]"
+                  className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-secondary-accent shadow-[0_0_8px_rgba(2,62,138,0.6)]"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -124,7 +124,7 @@ export default function Navbar() {
         {/* Mobile menu trigger */}
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-text/80 transition hover:border-primary-accent/40 hover:text-white lg:hidden cursor-pointer"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-text/80 transition hover:border-secondary-accent/40 hover:text-white lg:hidden cursor-pointer"
           aria-label="Toggle navigation"
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -162,7 +162,7 @@ export default function Navbar() {
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 text-text/80 transition hover:border-primary-accent/40 hover:text-white cursor-pointer"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 text-text/80 transition hover:border-secondary-accent/40 hover:text-white cursor-pointer"
                     aria-label="Close menu"
                   >
                     <X className="h-5 w-5" />
@@ -177,7 +177,7 @@ export default function Navbar() {
                       onClick={() => handleScroll(section.id)}
                       className={`rounded-2xl px-4 py-3.5 text-left text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-between min-h-[48px] font-mono-custom ${
                         activeSection === section.id
-                          ? "bg-primary-accent/10 text-primary-accent border-l-2 border-primary-accent"
+                          ? "bg-secondary-accent/10 text-secondary-accent border-l-2 border-secondary-accent"
                           : "text-muted-text hover:bg-white/5 hover:text-white"
                       }`}
                     >
