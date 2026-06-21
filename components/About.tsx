@@ -23,12 +23,12 @@ export default function About() {
           I specialize in designing and deploying end-to-end Machine Learning systems. My expertise bridges the gap between deep mathematical modeling and production-scale software engineering, focusing on pipeline automation and low-latency deployments.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 pt-2">
-          <div className="bg-secondary-bg/30 border border-white/5 rounded-2xl p-4 glass-card">
+          <div className="bg-[#1a1a2e] shadow-neu-sm border border-white/5 rounded-2xl p-4">
             <h4 className="text-xs font-bold text-primary-accent uppercase tracking-wider mb-1">Production AI Systems</h4>
             <p className="text-[11px] text-muted-text leading-normal">Implementing customized computer vision architectures, time-series forecasting frameworks, and NLP pipelines optimized for deployment environments.</p>
           </div>
-          <div className="bg-secondary-bg/30 border border-white/5 rounded-2xl p-4 glass-card">
-            <h4 className="text-xs font-bold text-secondary-accent uppercase tracking-wider mb-1">MLOps Infrastructure</h4>
+          <div className="bg-[#1a1a2e] shadow-neu-sm border border-white/5 rounded-2xl p-4">
+            <h4 className="text-xs font-bold text-primary-accent uppercase tracking-wider mb-1">MLOps Infrastructure</h4>
             <p className="text-[11px] text-muted-text leading-normal">Orchestrating model serving endpoints with FastAPI and Docker, configuring S3 data stores, and establishing automated model tracking via MLflow.</p>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function About() {
         className="space-y-4"
       >
         <div className="space-y-4">
-          <div className="flex gap-4 items-start bg-secondary-bg/30 border border-white/5 rounded-2xl p-4 glass-card">
+          <div className="flex gap-4 items-start bg-[#1a1a2e] shadow-neu-sm border border-white/5 rounded-2xl p-4">
             <div className="p-2.5 rounded-xl bg-primary-accent/10 border border-primary-accent/20 text-primary-accent shrink-0">
               <GraduationCap className="h-5 w-5" />
             </div>
@@ -87,7 +87,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="relative space-y-10 py-6 md:py-8 lg:py-12 scroll-mt-20">
+    <section id="about" className="relative rounded-[20px] bg-[#1a1a2e] shadow-neu-raised p-6 md:p-8 lg:p-10 scroll-mt-20 border border-white/5 space-y-10">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute right-0 top-1/4 h-80 w-80 rounded-full" />
 
@@ -108,9 +108,12 @@ export default function About() {
             {/* Animated background glow */}
             <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary-accent to-secondary-accent opacity-30 blur-lg transition duration-700 group-hover:opacity-50" />
             
-            {/* Circular Headshot Container */}
-            <div className="relative h-56 w-56 rounded-full bg-[#0b0f19] p-2.5 border border-white/10 overflow-hidden shadow-2xl">
-              <div className="relative h-full w-full overflow-hidden rounded-full bg-slate-950">
+            {/* Circular Headshot Container (Neumorphic Double Ring) */}
+            <div 
+              className="relative h-56 w-56 rounded-full bg-[#1a1a2e] p-2 overflow-hidden shadow-neu-raised transition-all duration-300"
+              style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(0, 245, 212, 0.4)" }}
+            >
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-[#1a1a2e]">
                 <Image
                   src="/hassan-portrait.jpg"
                   alt="Hassan Ali Portrait"
@@ -123,9 +126,6 @@ export default function About() {
                 <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent opacity-85 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
               </div>
             </div>
-
-            {/* Glowing borders */}
-            <div className="absolute -inset-0.5 rounded-full border border-primary-accent/30 group-hover:border-secondary-accent/40 transition-colors pointer-events-none" />
           </div>
         </div>
 
@@ -148,8 +148,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* Tabs header */}
-          <div className="flex border-b border-white/5 pb-2 gap-2 overflow-x-auto no-scrollbar whitespace-nowrap">
+          {/* Tabs header (Neumorphic Inset / Raised) */}
+          <div className="flex border-b border-white/5 pb-3 gap-3 overflow-x-auto no-scrollbar whitespace-nowrap">
             {[
               { id: "expertise", label: "Expertise", icon: BrainCircuit },
               { id: "education", label: "Education", icon: BookOpen },
@@ -162,25 +162,20 @@ export default function About() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as TabType)}
                   className={`relative flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer font-mono-custom ${
-                    isActive ? "text-primary-accent" : "text-muted-text hover:text-white"
+                    isActive 
+                      ? "bg-[#1a1a2e] shadow-neu-inset text-primary-accent border border-white/5" 
+                      : "text-muted-text hover:text-white"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
                   <span>{tab.label}</span>
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTabIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary-accent shadow-[0_0_8px_rgba(0,245,255,0.6)]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
                 </button>
               );
             })}
           </div>
 
-          {/* Tabs content container */}
-          <div className="min-h-[220px] bg-secondary-bg/25 border border-white/5 rounded-3xl p-6 glass-card relative">
+          {/* Tabs content container (Neumorphic Raised) */}
+          <div className="min-h-[220px] bg-[#1a1a2e] shadow-neu-raised border border-white/5 rounded-3xl p-6 relative">
             <AnimatePresence mode="wait">
               {tabContents[activeTab]}
             </AnimatePresence>

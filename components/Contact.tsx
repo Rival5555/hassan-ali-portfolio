@@ -120,7 +120,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative space-y-10 py-6 md:py-8 lg:py-12 scroll-mt-20">
+    <section id="contact" className="relative rounded-[20px] bg-[#1a1a2e] shadow-neu-raised p-6 md:p-8 lg:p-10 scroll-mt-20 border border-white/5 space-y-10">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-cyan absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 
@@ -144,7 +144,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="glass-card rounded-3xl p-6 border border-white/5 relative overflow-hidden"
+          className="bg-[#1a1a2e] shadow-neu-raised rounded-3xl p-6 border border-white/5 relative overflow-hidden"
         >
           {formState === "success" ? (
             <motion.div
@@ -180,10 +180,10 @@ export default function Contact() {
                     placeholder="Hassan Ali"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    className={`w-full rounded-2xl border bg-slate-950/60 px-4 py-3 text-sm text-text placeholder-muted-text/50 outline-none transition focus:ring-1 ${
+                    className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 border-2 border-transparent focus:border-b-[#00f5d4] ${
                       touched.name && errors.name
-                        ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/30"
-                        : "border-white/5 focus:border-primary-accent focus:ring-primary-accent/30"
+                        ? "border-red-500/50 focus:border-red-500"
+                        : ""
                     }`}
                   />
                   {touched.name && errors.name && (
@@ -202,10 +202,10 @@ export default function Contact() {
                     placeholder="hassanali93r@gmail.com"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    className={`w-full rounded-2xl border bg-slate-950/60 px-4 py-3 text-sm text-text placeholder-muted-text/50 outline-none transition focus:ring-1 ${
+                    className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 border-2 border-transparent focus:border-b-[#00f5d4] ${
                       touched.email && errors.email
-                        ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/30"
-                        : "border-white/5 focus:border-primary-accent focus:ring-primary-accent/30"
+                        ? "border-red-500/50 focus:border-red-500"
+                        : ""
                     }`}
                   />
                   {touched.email && errors.email && (
@@ -223,13 +223,13 @@ export default function Contact() {
                   name="message"
                   required
                   rows={5}
-                  placeholder="Describe your project, model parameters, or MLOps setup..."
+                  placeholder="Describe your MLOps setup, deep learning training runs, or code parameters..."
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  className={`w-full rounded-2xl border bg-slate-950/60 px-4 py-3 text-sm text-text placeholder-muted-text/50 outline-none transition focus:ring-1 resize-none ${
+                  className={`w-full rounded-2xl bg-[#1a1a2e] shadow-neu-inset px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition-all duration-300 resize-none border-2 border-transparent focus:border-b-[#00f5d4] ${
                     touched.message && errors.message
-                      ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/30"
-                      : "border-white/5 focus:border-primary-accent focus:ring-primary-accent/30"
+                      ? "border-red-500/50 focus:border-red-500"
+                      : ""
                   }`}
                 />
                 {touched.message && errors.message && (
@@ -240,11 +240,11 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={formState === "loading"}
-                className="w-full flex items-center justify-center gap-2 rounded-2xl btn-primary-custom py-3 text-sm font-bold transition-all disabled:opacity-75 cursor-pointer font-mono-custom"
+                className="w-full flex items-center justify-center gap-2 rounded-full btn-primary-custom py-3 text-sm font-bold transition-all disabled:opacity-75 cursor-pointer font-mono-custom min-h-[44px]"
               >
                 {formState === "loading" ? (
                   <>
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-slate-950 border-t-transparent" />
                     <span>Sending...</span>
                   </>
                 ) : (
@@ -274,7 +274,7 @@ export default function Contact() {
           className="space-y-6"
         >
           {/* Quick info card */}
-          <div className="glass-card rounded-3xl p-6 border border-white/5 space-y-4">
+          <div className="bg-[#1a1a2e] shadow-neu-raised rounded-3xl p-6 border border-white/5 space-y-4">
             <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono-custom">Direct Connections</h3>
             <p className="text-xs text-muted-text leading-relaxed">
               Prefer standard communication? Feel free to reach out via these nodes. Checked regularly.
@@ -282,55 +282,55 @@ export default function Contact() {
             <div className="space-y-3 pt-2">
               <a
                 href="mailto:hassanali93r@gmail.com"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950/40 border border-white/5 hover:border-primary-accent/30 transition-all group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-primary-accent/10 text-primary-accent group-hover:bg-primary-accent group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
                   <Mail className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Email Address</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-primary-accent transition-colors">hassanali93r@gmail.com</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">hassanali93r@gmail.com</span>
                 </div>
               </a>
               <a
                 href="https://www.linkedin.com/in/hasanali09"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950/40 border border-white/5 hover:border-secondary-accent/30 transition-all group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-secondary-accent/10 text-secondary-accent group-hover:bg-secondary-accent group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
                   <Linkedin className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">LinkedIn Profile</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-secondary-accent transition-colors">Hassan Ali</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">Hassan Ali</span>
                 </div>
               </a>
               <a
                 href="https://github.com/Rival5555"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950/40 border border-white/5 hover:border-primary-accent/30 transition-all group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-primary-accent/10 text-primary-accent group-hover:bg-primary-accent group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
                   <Github className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">GitHub Repositories</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-primary-accent transition-colors">Rival5555</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">Rival5555</span>
                 </div>
               </a>
               <a
                 href="/Hassan Ali [Resume].pdf"
                 download
-                className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950/40 border border-white/5 hover:border-secondary-accent/30 transition-all group"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300 group"
               >
-                <div className="p-2 rounded-xl bg-secondary-accent/10 text-secondary-accent group-hover:bg-secondary-accent group-hover:text-slate-950 transition-all">
+                <div className="p-2 rounded-xl bg-[#00f5d4]/10 text-[#00f5d4] group-hover:bg-[#00f5d4] group-hover:text-slate-950 transition-all">
                   <FileText className="h-4.5 w-4.5" />
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Download Resume</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-secondary-accent transition-colors">Hassan Ali [Resume].pdf</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00f5d4] transition-colors">Hassan Ali [Resume].pdf</span>
                 </div>
               </a>
             </div>

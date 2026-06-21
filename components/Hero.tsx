@@ -27,19 +27,17 @@ export default function Hero() {
           <div className="space-y-5 text-center lg:text-left flex flex-col items-center lg:items-start">
             
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#00f5d4]/30 bg-[#00f5d4]/10 px-3.5 py-1 text-xs font-semibold text-[#00f5d4] backdrop-blur-md font-mono-custom">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/5 bg-[#1a1a2e] shadow-neu-sm px-3.5 py-1.5 text-xs font-semibold text-[#00f5d4] font-mono-custom">
               <Briefcase className="h-3.5 w-3.5" />
               <span>Machine Learning Engineer | AI Developer | MLOps</span>
             </div>
 
             {/* Headline and Subheadline */}
             <div className="space-y-3 w-full">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white uppercase leading-none h1-cursor">
-                I'm Hassan, <br />
-                <span className="bg-gradient-to-r from-[#00f5d4] via-cyan-400 to-[#00f5ff] bg-clip-text text-transparent font-black">
-                  I Build ML Systems
-                </span> <br />
-                That Actually Ship
+              <h1 className="font-extrabold tracking-tight uppercase leading-none h1-cursor text-left lg:text-left flex flex-col">
+                <span className="text-xl sm:text-2xl font-light text-[#00f5d4] block mb-2 font-mono-custom">I'm Hassan,</span>
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white block">I Build ML Systems</span>
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#00f5d4] block mt-1">That Actually Ship</span>
               </h1>
               
               {/* Single, punchy description (max 15 words) */}
@@ -48,35 +46,38 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Stat line (Subtle badge-style inline stats) */}
-            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/25 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-[#00f5d4] font-mono-custom">
-                📊 APTOS Dataset: 92% Accuracy
+            {/* Stat line (Subtle neumorphic badges) */}
+            <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-[#00f5d4] font-mono-custom">
+                📊 92% accuracy
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text/80 font-mono-custom">
-                ⚙️ 4 Architectures Benchmarked
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-text/80 font-mono-custom">
+                ⚙️ 4 architectures
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-text/80 font-mono-custom">
+                💡 APTOS dataset
               </span>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons (Neumorphic raised with hover transitions) */}
             <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 pt-1 w-full sm:w-auto font-mono-custom">
-              {/* Primary CTA (filled, cyan bg, dark text) */}
+              {/* Primary CTA (filled cyan, dark text, raised/inset hover) */}
               <button
                 onClick={() => handleScroll("projects")}
-                className="group flex items-center justify-center gap-2 rounded-full bg-[#00f5d4] hover:bg-[#00f5d4]/90 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-[#00f5d4]/15 transition-all hover:-translate-y-0.5 hover:scale-103 cursor-pointer w-full sm:w-auto min-h-[44px]"
+                className="group flex items-center justify-center gap-2 rounded-full bg-[#00f5d4] hover:bg-[#00f5d4]/90 px-6 py-3 text-sm font-bold text-slate-950 shadow-neu-sm hover:shadow-neu-inset hover:border-[#00f5d4]/40 border border-transparent transition-all duration-300 cursor-pointer w-full sm:w-auto min-h-[44px]"
               >
                 <span>View Projects</span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
-              {/* Secondary CTA (outlined, cyan border, cyan text) */}
+              {/* Secondary CTA (outlined, cyan border, raised/inset hover) */}
               <a
                 href="/Hassan Ali [Resume].pdf"
                 download
-                className="flex items-center justify-center gap-2 rounded-full border border-[#00f5d4] text-[#00f5d4] hover:bg-[#00f5d4]/10 bg-transparent px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 w-full sm:w-auto min-h-[44px]"
+                className="flex items-center justify-center gap-2 rounded-full border border-[#00f5d4] text-[#00f5d4] hover:bg-[#00f5d4]/10 bg-transparent px-6 py-3 text-sm font-semibold shadow-neu-sm hover:shadow-neu-inset transition-all duration-300 w-full sm:w-auto min-h-[44px]"
               >
                 <span>Download Resume</span>
               </a>
-              {/* Tertiary CTA (ghost text link, icon) */}
+              {/* Tertiary CTA (text link only) */}
               <button
                 onClick={() => handleScroll("contact")}
                 className="flex items-center justify-center gap-2 text-slate-400 hover:text-[#00f5d4] transition-colors text-sm font-semibold cursor-pointer w-full sm:w-auto min-h-[44px]"
@@ -94,9 +95,12 @@ export default function Hero() {
               {/* Ambient blur behind headshot */}
               <div className="absolute -inset-1 rounded-full bg-[#00f5d4]/15 opacity-25 blur-lg transition duration-700 group-hover:opacity-45" />
 
-              {/* Circular Headshot Card */}
-              <div className="relative h-44 w-44 rounded-full bg-[#0a0a0a] p-1.5 border border-[#00f5d4]/20 overflow-hidden shadow-2xl">
-                <div className="relative h-full w-full overflow-hidden rounded-full bg-[#0a0a0a]">
+              {/* Circular Headshot Card (Neumorphic double ring) */}
+              <div 
+                className="relative h-44 w-44 rounded-full bg-[#1a1a2e] p-1.5 overflow-hidden transition-all duration-300"
+                style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(0, 245, 212, 0.4)" }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-full bg-[#1a1a2e]">
                   <Image
                     src="/hassan-portrait.jpg"
                     alt="Hassan Ali Portrait"
@@ -110,22 +114,22 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Labeled Skills layout */}
+            {/* Labeled Skills layout (Neumorphic pills, cyan text on hover) */}
             <div className="w-full space-y-3.5">
               {/* Row 1: Core ML */}
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-[#00f5d4]/80 font-mono-custom block text-center lg:text-left">Core ML</span>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     🐍 Python
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     🔥 PyTorch
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     🤖 TensorFlow
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     🌊 OpenCV
                   </span>
                 </div>
@@ -135,13 +139,13 @@ export default function Hero() {
               <div className="space-y-1">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-[#00f5d4]/80 font-mono-custom block text-center lg:text-left">Deploy & Infra</span>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     ⚡ FastAPI
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     📦 Docker
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f5d4]/20 bg-[#111111] px-3.5 py-1 text-xs font-semibold text-text font-mono-custom">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00f5d4] transition-all">
                     ☁️ AWS
                   </span>
                 </div>
@@ -150,13 +154,13 @@ export default function Hero() {
 
             {/* Current Focus banner below avatar */}
             <div className="w-full text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl glass-card border border-white/5 shadow-md">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#1a1a2e] shadow-neu-raised border border-white/5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f5d4] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00f5d4]"></span>
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text font-mono-custom">Current Focus:</span>
-                <span className="text-xs text-text font-bold font-mono-custom">Scalable AI & MLOps</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-mono-custom">Current Focus:</span>
+                <span className="text-xs text-white font-bold font-mono-custom">Scalable AI & MLOps</span>
               </div>
             </div>
           </div>

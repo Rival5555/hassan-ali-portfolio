@@ -61,7 +61,7 @@ const SKILLS_DATA: SkillGroup[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative space-y-10 py-6 md:py-8 lg:py-12 scroll-mt-20">
+    <section id="skills" className="relative rounded-[20px] bg-[#1a1a2e] shadow-neu-raised p-6 md:p-8 lg:p-10 scroll-mt-20 border border-white/5 space-y-10">
       {/* Decorative Glow Spot */}
       <div className="glow-spot-violet absolute left-0 bottom-1/4 h-80 w-80 rounded-full" />
 
@@ -81,7 +81,6 @@ export default function Skills() {
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
         {SKILLS_DATA.map((group, idx) => {
           const Icon = group.icon;
-          const isCyan = group.color === "cyan";
           return (
             <motion.div
               key={group.title}
@@ -89,13 +88,8 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: idx * 0.08 }}
               viewport={{ once: true, amount: 0.15 }}
-              className="glass-card rounded-3xl p-6 border border-white/5 relative overflow-hidden group transition-all duration-300 hover:border-primary-accent/30 hover:shadow-[0_0_15px_rgba(0,245,255,0.15)]"
+              className="bg-[#1a1a2e] shadow-neu-raised rounded-2xl p-6 border border-white/5 relative overflow-hidden group transition-all duration-300 hover:border-primary-accent/20 hover:shadow-neu-glow"
             >
-              {/* Subtle hover accent light */}
-              <div
-                className="absolute inset-x-0 top-0 h-[2px] opacity-0 group-hover:opacity-40 transition-opacity bg-gradient-to-r from-primary-accent to-secondary-accent"
-              />
-
               {/* Watermark outline icon */}
               <div
                 className="absolute -right-4 -top-4 text-white/[0.015] transition-colors pointer-events-none z-0 group-hover:text-primary-accent/[0.02]"
@@ -118,7 +112,7 @@ export default function Skills() {
                   {group.skills.map((skill) => (
                     <span
                        key={skill}
-                       className="skill-tag rounded-xl px-3.5 py-1.5 text-xs tracking-wide cursor-default"
+                       className="skill-tag rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-wide cursor-default"
                     >
                       {skill}
                     </span>

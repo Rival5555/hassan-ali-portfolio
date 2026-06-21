@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-cyan-gradient-t bg-background relative overflow-hidden py-10 md:py-12">
+    <footer className="border-t border-white/5 relative overflow-hidden py-10 md:py-12 bg-transparent">
       {/* Subtle background glow */}
       <div className="absolute bottom-0 right-1/3 w-96 h-20 bg-secondary-accent/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -20,13 +20,13 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Social Link circles */}
+        {/* Social Link circles (Neumorphic raised -> inset) */}
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/Rival5555"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-muted-text hover:text-primary-accent hover:border-primary-accent/40 hover:scale-105 transition-all"
+            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00f5d4] hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300"
             aria-label="GitHub Profile"
           >
             <Github className="h-4 w-4" />
@@ -35,14 +35,14 @@ export default function Footer() {
             href="https://www.linkedin.com/in/hasanali09"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-muted-text hover:text-secondary-accent hover:border-secondary-accent/40 hover:scale-105 transition-all"
+            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00f5d4] hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300"
             aria-label="LinkedIn Profile"
           >
             <Linkedin className="h-4 w-4" />
           </a>
           <a
             href="mailto:hassanali93r@gmail.com"
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-slate-950/40 p-2 text-muted-text hover:text-primary-accent hover:border-primary-accent/40 hover:scale-105 transition-all"
+            className="inline-flex items-center justify-center rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 p-2.5 text-slate-300 hover:text-[#00f5d4] hover:shadow-neu-inset hover:border-[#00f5d4]/20 transition-all duration-300"
             aria-label="Email Contact"
           >
             <Mail className="h-4 w-4" />

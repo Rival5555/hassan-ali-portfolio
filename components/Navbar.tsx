@@ -64,7 +64,7 @@ export default function Navbar() {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-x-0 top-0 z-50 border-cyan-gradient-b nav-glass"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/5 shadow-neu-sm nav-glass"
     >
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-            <span className="text-xs text-[#00f5ff] font-semibold font-mono-custom">AI/ML Engineer</span>
+            <span className="text-xs text-[#00f5d4] font-semibold font-mono-custom">AI/ML Engineer</span>
           </div>
         </button>
 
@@ -103,7 +103,7 @@ export default function Navbar() {
               {activeSection === section.id && (
                 <motion.span
                   layoutId="activeNavIndicator"
-                  className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-primary-accent shadow-[0_0_8px_rgba(0,245,255,0.6)]"
+                  className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-primary-accent shadow-[0_0_8px_rgba(0,245,212,0.6)]"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -151,7 +151,7 @@ export default function Navbar() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed inset-y-0 right-0 z-50 w-full max-w-xs p-6 shadow-2xl backdrop-blur-2xl border-l border-cyan-gradient-t lg:hidden flex flex-col justify-between"
-              style={{ backgroundColor: "#0a0a0a" }}
+              style={{ backgroundColor: "#1a1a2e" }}
             >
               <div className="space-y-6">
                 {/* Drawer Header */}

@@ -85,8 +85,8 @@ export default function ConstellationBackground() {
 
     // Animation loop
     const animate = () => {
-      // Clear with background color #0a0a0a
-      ctx.fillStyle = "#0a0a0a";
+      // Clear with background color #1a1a2e
+      ctx.fillStyle = "#1a1a2e";
       ctx.fillRect(0, 0, width, height);
 
       // Draw the soft radial teal/cyan glow blooming from the center of the viewport
@@ -105,7 +105,7 @@ export default function ConstellationBackground() {
       // Soft cyan glow: blooming from center, fading to transparent
       radialGradient.addColorStop(0, "rgba(6, 182, 212, 0.12)");
       radialGradient.addColorStop(0.5, "rgba(6, 182, 212, 0.03)");
-      radialGradient.addColorStop(1, "rgba(10, 10, 10, 0)");
+      radialGradient.addColorStop(1, "rgba(26, 26, 46, 0)");
       
       ctx.fillStyle = radialGradient;
       ctx.fillRect(0, 0, width, height);
