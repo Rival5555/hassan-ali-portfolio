@@ -188,9 +188,9 @@ export default function ConstellationBackground() {
           const mDist = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
           if (mDist < mouseRadius) {
             // Smooth fade out based on distance
-            const alpha = (1 - mDist / mouseRadius) * 0.25;
+            const alpha = (1 - mDist / mouseRadius) * 0.65; // increased opacity from 0.25 to 0.65
             ctx.strokeStyle = `rgba(6, 182, 212, ${alpha})`;
-            ctx.lineWidth = 0.8; // slightly thicker for interactive mouse lines
+            ctx.lineWidth = 1.2; // increased thickness from 0.8 to 1.2
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(mouse.x, mouse.y);

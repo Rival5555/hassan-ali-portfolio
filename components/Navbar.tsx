@@ -64,7 +64,7 @@ export default function Navbar() {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background lg:bg-background/80 backdrop-blur-none lg:backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 border-cyan-gradient-b nav-glass"
     >
       <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
@@ -83,7 +83,7 @@ export default function Navbar() {
           </div>
           <div className="leading-tight">
             <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-            <span className="text-[10px] text-muted-text font-mono">AI/ML Engineer</span>
+            <span className="text-[10px] text-muted-text font-mono-custom">AI/ML Engineer</span>
           </div>
         </button>
 
@@ -93,7 +93,7 @@ export default function Navbar() {
             <button
               key={section.id}
               onClick={() => handleScroll(section.id)}
-              className={`relative text-[10px] uppercase tracking-wider font-bold transition-colors cursor-pointer ${
+              className={`relative text-[10px] uppercase tracking-wider font-bold transition-colors cursor-pointer font-mono-custom ${
                 activeSection === section.id
                   ? "text-primary-accent"
                   : "text-muted-text hover:text-white"
@@ -103,7 +103,7 @@ export default function Navbar() {
               {activeSection === section.id && (
                 <motion.span
                   layoutId="activeNavIndicator"
-                  className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-gradient-to-r from-primary-accent to-secondary-accent shadow-[0_0_8px_rgba(6,182,212,0.6)]"
+                  className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-primary-accent shadow-[0_0_8px_rgba(0,245,255,0.6)]"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -114,7 +114,7 @@ export default function Navbar() {
           <a
             href="/Hassan Ali [Resume].pdf"
             download
-            className="flex items-center gap-1.5 rounded-full border border-primary-accent/30 bg-primary-accent/10 px-3.5 py-1.5 text-[10px] uppercase tracking-wider font-bold text-primary-accent backdrop-blur-md transition-all hover:border-primary-accent/60 hover:bg-primary-accent/20 hover:-translate-y-0.5"
+            className="flex items-center gap-1.5 rounded-full btn-primary-custom px-3.5 py-1.5 text-[10px] uppercase tracking-wider font-bold transition-all hover:-translate-y-0.5 font-mono-custom"
           >
             <Download className="h-3.5 w-3.5" />
             <span>Resume</span>
@@ -150,15 +150,15 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs p-6 shadow-2xl backdrop-blur-2xl border-l border-white/5 lg:hidden flex flex-col justify-between"
-              style={{ backgroundColor: "#0F172A" }}
+              className="fixed inset-y-0 right-0 z-50 w-full max-w-xs p-6 shadow-2xl backdrop-blur-2xl border-l border-cyan-gradient-t lg:hidden flex flex-col justify-between"
+              style={{ backgroundColor: "#0a0a0a" }}
             >
               <div className="space-y-6">
                 {/* Drawer Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-white/5">
+                <div className="flex items-center justify-between pb-4 border-b border-cyan-gradient-b">
                   <div className="leading-tight">
                     <p className="text-sm font-bold text-white tracking-wide">Hassan Ali</p>
-                    <span className="text-[10px] text-muted-text font-mono">Navigation Menu</span>
+                    <span className="text-[10px] text-muted-text font-mono-custom">Navigation Menu</span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
@@ -175,9 +175,9 @@ export default function Navbar() {
                     <button
                       key={section.id}
                       onClick={() => handleScroll(section.id)}
-                      className={`rounded-2xl px-4 py-3.5 text-left text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${
+                      className={`rounded-2xl px-4 py-3.5 text-left text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-between min-h-[48px] font-mono-custom ${
                         activeSection === section.id
-                          ? "bg-gradient-to-r from-primary-accent/15 to-secondary-accent/15 text-primary-accent border-l-2 border-primary-accent"
+                          ? "bg-primary-accent/10 text-primary-accent border-l-2 border-primary-accent"
                           : "text-muted-text hover:bg-white/5 hover:text-white"
                       }`}
                     >
@@ -188,11 +188,11 @@ export default function Navbar() {
               </div>
 
               {/* Mobile Download Resume */}
-              <div className="pt-6 border-t border-white/5">
+              <div className="pt-6 border-cyan-gradient-t">
                 <a
                   href="/Hassan Ali [Resume].pdf"
                   download
-                  className="flex items-center justify-center gap-2 rounded-2xl border border-primary-accent/30 bg-primary-accent/10 px-4 py-3.5 text-center text-xs font-bold uppercase tracking-wider text-primary-accent transition-all hover:bg-primary-accent/20 min-h-[48px]"
+                  className="flex items-center justify-center gap-2 rounded-2xl btn-primary-custom px-4 py-3.5 text-center text-xs font-bold uppercase tracking-wider transition-all min-h-[48px] font-mono-custom"
                   onClick={() => setIsOpen(false)}
                 >
                   <Download className="h-4 w-4" />

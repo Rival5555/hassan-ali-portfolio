@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-background relative overflow-hidden py-10 md:py-12">
+    <footer className="border-cyan-gradient-t bg-background relative overflow-hidden py-10 md:py-12">
       {/* Subtle background glow */}
       <div className="absolute bottom-0 right-1/3 w-96 h-20 bg-secondary-accent/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -15,7 +15,7 @@ export default function Footer() {
           <p className="text-text/90 font-medium text-sm">
             &copy; {year} <span className="bg-gradient-to-r from-primary-accent to-secondary-accent bg-clip-text text-transparent font-bold">Hassan Ali</span>. All rights reserved.
           </p>
-          <p className="text-[10px] text-muted-text/80 font-mono">
+          <p className="text-[10px] text-muted-text/80 font-mono-custom">
             Optimized for production-grade deployments.
           </p>
         </div>

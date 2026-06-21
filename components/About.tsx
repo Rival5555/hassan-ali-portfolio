@@ -48,7 +48,7 @@ export default function About() {
               <GraduationCap className="h-5 w-5" />
             </div>
             <div>
-              <span className="text-xs text-primary-accent font-semibold font-mono">2023 - Onward</span>
+              <span className="text-xs text-primary-accent font-semibold font-mono-custom">2023 - Onward</span>
               <h4 className="text-base font-bold text-white leading-snug">Bachelor of Science in Artificial Intelligence</h4>
               <p className="text-xs text-muted-text">Specialization in Deep Learning & Machine Learning Systems</p>
               <p className="text-[11px] text-muted-text/80 mt-1.5">Key coursework: Neural Networks, Machine Learning Architectures, Distributed Systems, Probability Models, Computer Vision, NLP.</p>
@@ -71,15 +71,15 @@ export default function About() {
         <div className="space-y-2.5 pt-1">
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-primary-accent" />
-            <span className="text-xs text-text font-medium font-mono">Standardize MLOps automation templates to reduce lead time</span>
+            <span className="text-xs text-text font-medium font-mono-custom">Standardize MLOps automation templates to reduce lead time</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-secondary-accent" />
-            <span className="text-xs text-text font-medium font-mono">Optimize models for ultra-low latency inference in production</span>
+            <span className="text-xs text-text font-medium font-mono-custom">Optimize models for ultra-low latency inference in production</span>
           </div>
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-emerald-500" />
-            <span className="text-xs text-text font-medium font-mono">Establish automated model retraining triggered on population drift detection</span>
+            <span className="text-xs text-text font-medium font-mono-custom">Establish automated model retraining triggered on population drift detection</span>
           </div>
         </div>
       </motion.div>
@@ -161,7 +161,7 @@ export default function About() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as TabType)}
-                  className={`relative flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer ${
+                  className={`relative flex items-center gap-1.5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer font-mono-custom ${
                     isActive ? "text-primary-accent" : "text-muted-text hover:text-white"
                   }`}
                 >
@@ -170,7 +170,7 @@ export default function About() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTabIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary-accent to-secondary-accent"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary-accent shadow-[0_0_8px_rgba(0,245,255,0.6)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}

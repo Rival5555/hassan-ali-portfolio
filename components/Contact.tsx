@@ -169,7 +169,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1.5 text-left">
-                  <label htmlFor="name" className="text-xs font-semibold text-text/80 tracking-wide">
+                  <label htmlFor="name" className="text-xs font-semibold text-text/80 tracking-wide font-mono-custom">
                     Name
                   </label>
                   <input
@@ -191,7 +191,7 @@ export default function Contact() {
                   )}
                 </div>
                 <div className="space-y-1.5 text-left">
-                  <label htmlFor="email" className="text-xs font-semibold text-text/80 tracking-wide">
+                  <label htmlFor="email" className="text-xs font-semibold text-text/80 tracking-wide font-mono-custom">
                     Email
                   </label>
                   <input
@@ -215,7 +215,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-1.5 text-left">
-                <label htmlFor="message" className="text-xs font-semibold text-text/80 tracking-wide">
+                <label htmlFor="message" className="text-xs font-semibold text-text/80 tracking-wide font-mono-custom">
                   Message
                 </label>
                 <textarea
@@ -240,7 +240,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={formState === "loading"}
-                className="w-full flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-primary-accent to-secondary-accent py-3 text-sm font-bold text-white shadow-lg shadow-primary-accent/10 hover:shadow-secondary-accent/20 transition-all hover:scale-101 disabled:opacity-75 cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 rounded-2xl btn-primary-custom py-3 text-sm font-bold transition-all disabled:opacity-75 cursor-pointer font-mono-custom"
               >
                 {formState === "loading" ? (
                   <>
@@ -275,7 +275,7 @@ export default function Contact() {
         >
           {/* Quick info card */}
           <div className="glass-card rounded-3xl p-6 border border-white/5 space-y-4">
-            <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">Direct Connections</h3>
+            <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono-custom">Direct Connections</h3>
             <p className="text-xs text-muted-text leading-relaxed">
               Prefer standard communication? Feel free to reach out via these nodes. Checked regularly.
             </p>
@@ -288,7 +288,7 @@ export default function Contact() {
                   <Mail className="h-4.5 w-4.5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono">Email Address</span>
+                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Email Address</span>
                   <span className="text-xs font-semibold text-text group-hover:text-primary-accent transition-colors">hassanali93r@gmail.com</span>
                 </div>
               </a>
@@ -302,7 +302,7 @@ export default function Contact() {
                   <Linkedin className="h-4.5 w-4.5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono">LinkedIn Profile</span>
+                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">LinkedIn Profile</span>
                   <span className="text-xs font-semibold text-text group-hover:text-secondary-accent transition-colors">Hassan Ali</span>
                 </div>
               </a>
@@ -316,7 +316,7 @@ export default function Contact() {
                   <Github className="h-4.5 w-4.5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono">GitHub Repositories</span>
+                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">GitHub Repositories</span>
                   <span className="text-xs font-semibold text-text group-hover:text-primary-accent transition-colors">Rival5555</span>
                 </div>
               </a>
@@ -329,7 +329,7 @@ export default function Contact() {
                   <FileText className="h-4.5 w-4.5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono">Download Resume</span>
+                  <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Download Resume</span>
                   <span className="text-xs font-semibold text-text group-hover:text-secondary-accent transition-colors">Hassan Ali [Resume].pdf</span>
                 </div>
               </a>

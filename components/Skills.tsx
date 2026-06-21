@@ -89,46 +89,36 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: idx * 0.08 }}
               viewport={{ once: true, amount: 0.15 }}
-              className={`glass-card rounded-3xl p-6 border border-white/5 relative overflow-hidden group transition-all duration-300 ${
-                isCyan ? "hover:border-primary-accent/30" : "hover:border-secondary-accent/30"
-              }`}
+              className="glass-card rounded-3xl p-6 border border-white/5 relative overflow-hidden group transition-all duration-300 hover:border-primary-accent/30 hover:shadow-[0_0_15px_rgba(0,245,255,0.15)]"
             >
               {/* Subtle hover accent light */}
               <div
-                className={`absolute inset-x-0 top-0 h-[2px] opacity-0 group-hover:opacity-40 transition-opacity bg-gradient-to-r ${
-                  isCyan ? "from-primary-accent to-cyan-400" : "from-secondary-accent to-violet-400"
-                }`}
+                className="absolute inset-x-0 top-0 h-[2px] opacity-0 group-hover:opacity-40 transition-opacity bg-gradient-to-r from-primary-accent to-secondary-accent"
               />
 
               {/* Watermark outline icon */}
               <div
-                className={`absolute -right-4 -top-4 text-white/[0.015] transition-colors pointer-events-none z-0 ${
-                  isCyan ? "group-hover:text-primary-accent/[0.02]" : "group-hover:text-secondary-accent/[0.02]"
-                }`}
+                className="absolute -right-4 -top-4 text-white/[0.015] transition-colors pointer-events-none z-0 group-hover:text-primary-accent/[0.02]"
               >
                 <Icon className="w-28 h-28" strokeWidth={1} />
               </div>
 
               <div className="relative z-10 space-y-4">
-                <div className="flex items-center gap-2.5 border-b border-white/5 pb-3">
+                <div className="flex items-center gap-2.5 border-cyan-gradient-b pb-3">
                   <div
-                    className={`p-2 rounded-xl transition-colors border ${
-                      isCyan
-                        ? "bg-primary-accent/10 border-primary-accent/10 text-primary-accent group-hover:bg-primary-accent group-hover:text-slate-950"
-                        : "bg-secondary-accent/10 border-secondary-accent/10 text-secondary-accent group-hover:bg-secondary-accent group-hover:text-slate-950"
-                    }`}
+                    className="p-2 rounded-xl transition-colors border bg-primary-accent/10 border-primary-accent/10 text-primary-accent group-hover:bg-primary-accent group-hover:text-slate-950"
                   >
                     <Icon className="h-4.5 w-4.5" />
                   </div>
-                  <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">{group.title}</h3>
+                  <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono-custom">{group.title}</h3>
                 </div>
 
                 {/* Skills Tags layout */}
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <span
-                      key={skill}
-                      className="rounded-xl border border-white/5 bg-slate-950/40 px-3.5 py-1.5 text-xs text-text/90 font-medium tracking-wide hover:border-primary-accent/30 hover:bg-slate-900 transition-colors cursor-default"
+                       key={skill}
+                       className="skill-tag rounded-xl px-3.5 py-1.5 text-xs tracking-wide cursor-default"
                     >
                       {skill}
                     </span>

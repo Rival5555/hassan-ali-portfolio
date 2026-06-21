@@ -57,7 +57,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               viewport={{ once: true, amount: 0.15 }}
-              className="group flex flex-col rounded-3xl border border-white/5 bg-secondary-bg/20 p-5 glass-card shadow-lg hover:border-primary-accent/30 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+              className="group flex flex-col rounded-3xl p-5 project-card relative overflow-hidden"
             >
               {/* Corner Accent Glow */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary-accent/5 via-transparent to-transparent rounded-tr-3xl" />
@@ -65,7 +65,7 @@ export default function Projects() {
               <div className="space-y-4 flex-1">
                 {/* Header */}
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-primary-accent font-mono">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-primary-accent font-mono-custom">
                     {project.category}
                   </span>
                   <h3 className="text-lg font-bold text-white tracking-wide group-hover:text-primary-accent transition-colors">
@@ -75,7 +75,7 @@ export default function Projects() {
 
                 {/* Problem Statement */}
                 <div className="space-y-1 bg-slate-950/45 p-3 rounded-2xl border border-white/5">
-                  <span className="text-[9px] uppercase font-bold text-muted-text/80 tracking-wider font-mono">Problem Statement</span>
+                  <span className="text-[9px] uppercase font-bold text-muted-text/80 tracking-wider font-mono-custom">Problem Statement</span>
                   <p className="text-xs text-text/90 leading-relaxed">
                     {project.problemStatement}
                   </p>
@@ -86,19 +86,19 @@ export default function Projects() {
               </div>
 
               {/* Action buttons */}
-              <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-white/5">
+              <div className="flex flex-wrap gap-2 pt-4 mt-4 border-cyan-gradient-t">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900/40 py-3 text-xs font-semibold text-text hover:border-primary-accent/40 hover:bg-slate-900 transition-colors min-h-[44px]"
+                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl btn-primary-custom py-3 text-xs font-semibold min-h-[44px] font-mono-custom"
                 >
                   <Github className="h-3.5 w-3.5" />
                   <span>GitHub</span>
                 </a>
                 <a
                   href={project.demo}
-                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-slate-900/40 py-3 text-xs font-semibold text-text hover:border-secondary-accent/40 hover:bg-slate-900 transition-colors min-h-[44px]"
+                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl btn-primary-custom py-3 text-xs font-semibold min-h-[44px] font-mono-custom"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
                   <span>Live Demo</span>

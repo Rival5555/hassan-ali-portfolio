@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex flex-col justify-center overflow-hidden pt-6 pb-6 md:pt-8 md:pb-8 lg:pt-12 lg:pb-12 scroll-mt-20"
+      className="relative flex flex-col justify-center overflow-hidden pt-6 pb-6 md:pt-8 md:pb-8 lg:pt-12 lg:pb-12 scroll-mt-20 scanlines"
     >
 
       {/* Ambient backgrounds */}
@@ -27,14 +27,14 @@ export default function Hero() {
         <div className="space-y-6 z-10 text-center lg:text-left flex flex-col items-center lg:items-start">
           
           {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary-accent/30 bg-primary-accent/10 px-4 py-1.5 text-xs font-semibold text-primary-accent backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary-accent/30 bg-primary-accent/10 px-4 py-1.5 text-xs font-semibold text-primary-accent backdrop-blur-md font-mono-custom">
             <Briefcase className="h-3.5 w-3.5" />
             <span>Machine Learning Engineer | AI Developer | MLOps</span>
           </div>
 
           {/* Headline and Subheadline */}
           <div className="space-y-3 w-full">
-            <h1 className="text-fluid-h1 font-extrabold tracking-tight text-white uppercase leading-none">
+            <h1 className="text-fluid-h1 font-extrabold tracking-tight text-white uppercase leading-none h1-cursor">
               Building Production-Ready <br />
               <span className="bg-gradient-to-r from-primary-accent via-cyan-400 to-secondary-accent bg-clip-text text-transparent font-black">
                 AI Systems
@@ -55,7 +55,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
             <button
               onClick={() => handleScroll("projects")}
-              className="group flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-accent to-secondary-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary-accent/15 transition-all hover:-translate-y-0.5 hover:shadow-secondary-accent/25 hover:scale-103 cursor-pointer w-full sm:w-auto min-h-[44px]"
+              className="group flex items-center justify-center gap-2 rounded-full btn-primary-custom px-6 py-3 text-sm font-bold transition-all hover:-translate-y-0.5 hover:scale-103 cursor-pointer w-full sm:w-auto min-h-[44px] font-mono-custom"
             >
               <span>View Projects</span>
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -63,13 +63,13 @@ export default function Hero() {
             <a
               href="/Hassan Ali [Resume].pdf"
               download
-              className="flex items-center justify-center gap-2 rounded-full border border-white/10 bg-slate-900/30 px-6 py-3 text-sm font-semibold text-text backdrop-blur-md transition-all hover:border-primary-accent/40 hover:bg-slate-900/80 hover:-translate-y-0.5 w-full sm:w-auto min-h-[44px]"
+              className="flex items-center justify-center gap-2 rounded-full btn-secondary-custom px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 w-full sm:w-auto min-h-[44px] font-mono-custom"
             >
               <span>Download Resume</span>
             </a>
             <button
               onClick={() => handleScroll("contact")}
-              className="flex items-center justify-center gap-2 rounded-full border border-primary-accent/20 bg-primary-accent/5 px-6 py-3 text-sm font-semibold text-primary-accent backdrop-blur-md transition-all hover:border-primary-accent/50 hover:bg-primary-accent/15 hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto min-h-[44px]"
+              className="flex items-center justify-center gap-2 rounded-full btn-secondary-custom px-6 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto min-h-[44px] font-mono-custom"
             >
               <Mail className="h-4 w-4" />
               <span>Contact Me</span>
@@ -101,38 +101,38 @@ export default function Hero() {
             </div>
 
             {/* Absolute Orbiting badges (hidden on mobile, floating on desktop/tablet) */}
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-1 top-2 -left-8">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-1 top-2 -left-8">
               🐍 Python
             </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-2 top-0 -right-8">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-2 top-0 -right-8">
               🔥 PyTorch
             </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-3 top-24 -left-12">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-3 top-24 -left-12">
               🌊 OpenCV
             </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-4 top-20 -right-14">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-4 top-20 -right-14">
               📦 Docker
             </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-5 bottom-8 -left-8">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-5 bottom-8 -left-8">
               ⚡ FastAPI
             </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-6 bottom-4 -right-6">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-6 bottom-4 -right-6">
               ☁️ AWS
             </span>
-            <span className="hidden sm:inline-flex absolute text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-7 -bottom-6 left-12">
+            <span className="hidden sm:inline-flex absolute text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none animate-float-badge-7 -bottom-6 left-12">
               🤖 TensorFlow
             </span>
           </div>
 
           {/* Mobile Tag list (only visible under sm) */}
           <div className="flex flex-wrap gap-2 justify-center pt-6 sm:hidden w-full">
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🐍 Python</span>
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🔥 PyTorch</span>
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🌊 OpenCV</span>
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">📦 Docker</span>
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">⚡ FastAPI</span>
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">☁️ AWS</span>
-            <span className="text-[10px] font-mono font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🤖 TensorFlow</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🐍 Python</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🔥 PyTorch</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🌊 OpenCV</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">📦 Docker</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">⚡ FastAPI</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">☁️ AWS</span>
+            <span className="text-[10px] font-mono-custom font-bold text-white px-2.5 py-1 rounded-xl glass-card select-none">🤖 TensorFlow</span>
           </div>
 
           {/* Current Focus banner below avatar */}
@@ -142,8 +142,8 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text font-mono">Current Focus:</span>
-              <span className="text-xs text-text font-bold font-mono">Building scalable AI and MLOps solutions</span>
+              <span className="text-[10px] uppercase font-bold tracking-wider text-muted-text font-mono-custom">Current Focus:</span>
+              <span className="text-xs text-text font-bold font-mono-custom">Building scalable AI and MLOps solutions</span>
             </div>
           </div>
         </div>
