@@ -321,7 +321,7 @@ export default function Contact() {
                 </div>
               </a>
               <a
-                href="/Hassan Ali [Resume].pdf"
+                href="/Hassan_Ali_Resume_.pdf"
                 download
                 className="flex items-center gap-3 p-3 rounded-2xl bg-[#1a1a2e] shadow-neu-sm border border-white/5 hover:shadow-neu-inset hover:border-[#023e8a]/40 transition-all duration-300 group"
               >
@@ -330,7 +330,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-[9px] uppercase font-bold text-muted-text font-mono-custom">Download Resume</span>
-                  <span className="text-xs font-semibold text-text group-hover:text-[#00b4d8] transition-colors">Hassan Ali [Resume].pdf</span>
+                  <span className="text-xs font-semibold text-text group-hover:text-[#00b4d8] transition-colors">Hassan_Ali_Resume_.pdf</span>
                 </div>
               </a>
             </div>

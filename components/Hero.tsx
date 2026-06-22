@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronRight, Mail, Briefcase } from "lucide-react";
 
@@ -45,7 +44,7 @@ export default function Hero() {
             {/* Headline and Subheadline */}
             <div className="space-y-3 w-full">
               <h1 className="font-extrabold tracking-tight uppercase leading-none text-left lg:text-left flex flex-col">
-                <span className="text-xl sm:text-2xl font-light text-[#00b4d8] block mb-2 font-mono-custom">I'm Hassan,</span>
+                <span className="text-xl sm:text-2xl font-light text-[#00b4d8] block mb-2 font-mono-custom">I&apos;m Hassan,</span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white block">I Build ML Systems</span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#00b4d8] block mt-1">That Actually Ship</span>
               </h1>
@@ -81,7 +80,7 @@ export default function Hero() {
               </button>
               {/* Secondary CTA (outlined, blue border, raised/inset hover) */}
               <a
-                href="/Hassan Ali [Resume].pdf"
+                href="/Hassan_Ali_Resume_.pdf"
                 download
                 className="flex items-center justify-center gap-2 rounded-full border border-[#023e8a] text-[#00b4d8] hover:bg-[#023e8a]/10 bg-transparent px-6 py-3 text-sm font-semibold shadow-neu-sm hover:shadow-neu-inset transition-all duration-300 w-full sm:w-auto min-h-[44px]"
               >
@@ -101,17 +100,17 @@ export default function Hero() {
           {/* RIGHT COLUMN */}
           <div className="relative z-10 flex flex-col items-center justify-center max-w-sm mx-auto w-full gap-4">
             {/* Orbit Container wrapping Avatar and revolving Core ML & Deploy/Infra skills */}
-            <div className="orbit-container relative flex items-center justify-center w-[230px] h-[230px] sm:w-[280px] sm:h-[280px] mx-auto select-none my-6">
+            <div className="orbit-container relative flex items-center justify-center w-[180px] h-[180px] min-[390px]:w-[230px] min-[390px]:h-[230px] sm:w-[280px] sm:h-[280px] mx-auto select-none my-6">
               
               {/* Central Avatar */}
-              <div className="relative z-20 group p-2">
+              <div className="relative z-20 group p-1.5">
                 {/* Ambient blur behind headshot */}
                 <div className="absolute -inset-1 rounded-full bg-[#023e8a]/20 opacity-25 blur-lg transition duration-700 group-hover:opacity-45" />
    
                 {/* Circular Headshot Card (Neumorphic double ring) */}
                 <div 
-                  className="relative h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-[#1a1a2e] p-1.5 overflow-hidden transition-all duration-300"
-                  style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(2, 62, 138, 0.6)" }}
+                  className="relative h-24 w-24 min-[390px]:h-32 min-[390px]:w-32 sm:h-40 sm:w-40 rounded-full bg-[#1a1a2e] p-1.5 overflow-hidden transition-all duration-300"
+                  style={{ boxShadow: "0 0 0 3px #1a1a2e, 0 0 0 5px rgba(2, 62, 138, 0.6)" }}
                 >
                   <div className="relative h-full w-full overflow-hidden rounded-full bg-[#1a1a2e]">
                     <Image
@@ -120,7 +119,7 @@ export default function Hero() {
                       fill
                       priority
                       className="object-cover transition-transform duration-750 group-hover:scale-105"
-                      sizes="(max-width: 640px) 8rem, 10rem"
+                      sizes="(max-width: 390px) 6rem, (max-width: 640px) 8rem, 10rem"
                     />
                     <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent opacity-70 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
                   </div>
@@ -150,7 +149,7 @@ export default function Hero() {
                         }}
                       >
                         <div className="orbit-spin-reverse">
-                          <span className="inline-flex items-center gap-1 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-2.5 py-1 text-[10px] sm:text-[11px] font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] hover:border-[#00b4d8]/30 transition-all duration-300 hover:scale-110 cursor-default whitespace-nowrap">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-1.5 py-0.5 text-[9px] min-[390px]:px-2.5 min-[390px]:py-1 min-[390px]:text-[10px] sm:text-[11px] font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] hover:border-[#00b4d8]/30 transition-all duration-300 hover:scale-110 cursor-default whitespace-nowrap">
                             {skill.icon} {skill.name}
                           </span>
                         </div>
