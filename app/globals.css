@@ -155,16 +155,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* Blinking Cursor on Main Title */
-@keyframes blink-cursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.h1-cursor::after {
-  content: " |";
-  animation: blink-cursor 1s step-end infinite;
-  color: #00b4d8;
-}
 
 /* Reusable Project Card */
 .project-card {
@@ -234,3 +224,36 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-neu-inset) !important;
   background-color: rgba(2, 62, 138, 0.1) !important;
 }
+
+/* Orbiting Badges Around Profile Picture */
+@keyframes orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-rotate-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbit-rotate 25s linear infinite;
+}
+
+.orbit-spin-reverse {
+  animation: orbit-rotate-reverse 25s linear infinite;
+}
+
+.orbit-container:hover .orbit-spin,
+.orbit-container:hover .orbit-spin-reverse {
+  animation-play-state: paused;
+}
+

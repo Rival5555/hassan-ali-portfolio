@@ -11,6 +11,16 @@ export default function Hero() {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const skills = [
+    { name: "Python", icon: "🐍" },
+    { name: "PyTorch", icon: "🔥" },
+    { name: "TensorFlow", icon: "🤖" },
+    { name: "OpenCV", icon: "🌊" },
+    { name: "FastAPI", icon: "⚡" },
+    { name: "Docker", icon: "📦" },
+    { name: "AWS", icon: "☁️" },
+  ];
+
   return (
     <section
       id="home"
@@ -34,7 +44,7 @@ export default function Hero() {
 
             {/* Headline and Subheadline */}
             <div className="space-y-3 w-full">
-              <h1 className="font-extrabold tracking-tight uppercase leading-none h1-cursor text-left lg:text-left flex flex-col">
+              <h1 className="font-extrabold tracking-tight uppercase leading-none text-left lg:text-left flex flex-col">
                 <span className="text-xl sm:text-2xl font-light text-[#00b4d8] block mb-2 font-mono-custom">I'm Hassan,</span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white block">I Build ML Systems</span>
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#00b4d8] block mt-1">That Actually Ship</span>
@@ -89,71 +99,71 @@ export default function Hero() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="relative z-10 flex flex-col items-center justify-center max-w-sm mx-auto w-full gap-5">
-            {/* Avatar floating boundary wrapper */}
-            <div className="relative group p-2">
-              {/* Ambient blur behind headshot */}
-              <div className="absolute -inset-1 rounded-full bg-[#023e8a]/20 opacity-25 blur-lg transition duration-700 group-hover:opacity-45" />
- 
-              {/* Circular Headshot Card (Neumorphic double ring) */}
-              <div 
-                className="relative h-44 w-44 rounded-full bg-[#1a1a2e] p-1.5 overflow-hidden transition-all duration-300"
-                style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(2, 62, 138, 0.6)" }}
-              >
-                <div className="relative h-full w-full overflow-hidden rounded-full bg-[#1a1a2e]">
-                  <Image
-                    src="/hassan-portrait.jpg"
-                    alt="Hassan Ali Portrait"
-                    fill
-                    priority
-                    className="object-cover transition-transform duration-750 group-hover:scale-105"
-                    sizes="11rem"
-                  />
-                  <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent opacity-70 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
-                </div>
-              </div>
-            </div>
-
-            {/* Labeled Skills layout (Neumorphic pills, blue text on hover) */}
-            <div className="w-full space-y-3.5">
-              {/* Row 1: Core ML */}
-              <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#00b4d8]/80 font-mono-custom block text-center lg:text-left">Core ML</span>
-                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    🐍 Python
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    🔥 PyTorch
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    🤖 TensorFlow
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    🌊 OpenCV
-                  </span>
+          <div className="relative z-10 flex flex-col items-center justify-center max-w-sm mx-auto w-full gap-4">
+            {/* Orbit Container wrapping Avatar and revolving Core ML & Deploy/Infra skills */}
+            <div className="orbit-container relative flex items-center justify-center w-[230px] h-[230px] sm:w-[280px] sm:h-[280px] mx-auto select-none my-6">
+              
+              {/* Central Avatar */}
+              <div className="relative z-20 group p-2">
+                {/* Ambient blur behind headshot */}
+                <div className="absolute -inset-1 rounded-full bg-[#023e8a]/20 opacity-25 blur-lg transition duration-700 group-hover:opacity-45" />
+   
+                {/* Circular Headshot Card (Neumorphic double ring) */}
+                <div 
+                  className="relative h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-[#1a1a2e] p-1.5 overflow-hidden transition-all duration-300"
+                  style={{ boxShadow: "0 0 0 4px #1a1a2e, 0 0 0 6px rgba(2, 62, 138, 0.6)" }}
+                >
+                  <div className="relative h-full w-full overflow-hidden rounded-full bg-[#1a1a2e]">
+                    <Image
+                      src="/hassan-portrait.jpg"
+                      alt="Hassan Ali Portrait"
+                      fill
+                      priority
+                      className="object-cover transition-transform duration-750 group-hover:scale-105"
+                      sizes="(max-width: 640px) 8rem, 10rem"
+                    />
+                    <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent opacity-70 animate-[scan_4s_infinite_linear]" style={{ top: "0%" }} />
+                  </div>
                 </div>
               </div>
 
-              {/* Row 2: Deploy & Infra */}
-              <div className="space-y-1">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#00b4d8]/80 font-mono-custom block text-center lg:text-left">Deploy & Infra</span>
-                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    ⚡ FastAPI
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    📦 Docker
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] transition-all">
-                    ☁️ AWS
-                  </span>
-                </div>
+              {/* Orbiting Paths (Multiple rings for premium sci-fi feel) */}
+              <div className="absolute inset-0 rounded-full border border-dashed border-[#00b4d8]/15 pointer-events-none" />
+              <div className="absolute inset-3 rounded-full border border-dashed border-[#023e8a]/10 pointer-events-none" />
+
+              {/* Spinning Wrapper */}
+              <div className="orbit-spin absolute inset-0">
+                {skills.map((skill, index) => {
+                  const angle = index * (360 / skills.length);
+                  return (
+                    <div
+                      key={skill.name}
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        transform: `rotate(${angle}deg)`,
+                      }}
+                    >
+                      <div
+                        className="absolute top-0 left-1/2 pointer-events-auto z-30"
+                        style={{
+                          transform: `translate(-50%, -50%) rotate(${-angle}deg)`,
+                        }}
+                      >
+                        <div className="orbit-spin-reverse">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-[#1a1a2e] shadow-neu-sm border border-white/5 px-2.5 py-1 text-[10px] sm:text-[11px] font-semibold text-slate-200 font-mono-custom hover:text-[#00b4d8] hover:border-[#00b4d8]/30 transition-all duration-300 hover:scale-110 cursor-default whitespace-nowrap">
+                            {skill.icon} {skill.name}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
+
             </div>
 
             {/* Current Focus banner below avatar */}
-            <div className="w-full text-center">
+            <div className="w-full text-center mt-3">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#1a1a2e] shadow-neu-raised border border-white/5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00b4d8] opacity-75"></span>
