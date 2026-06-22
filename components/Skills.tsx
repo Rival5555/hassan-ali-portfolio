@@ -1,12 +1,11 @@
 "use client";
 
-import { ComponentType } from "react";
 import { motion } from "framer-motion";
-import { Brain, Cloud, Code2 } from "lucide-react";
+import { Brain, Cloud, Code2, LucideIcon } from "lucide-react";
 
 type SkillGroup = {
   title: string;
-  icon: ComponentType<{ className?: string }>;
+  icon: LucideIcon;
   skills: string[];
   color: "cyan" | "violet";
 };
