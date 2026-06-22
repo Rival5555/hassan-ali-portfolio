@@ -112,7 +112,7 @@ export default function Navbar() {
 
           {/* Download Resume Button */}
           <a
-            href="/Hassan_Ali_Resume_.pdf"
+            href="/Hassan_Ali_Resume.pdf"
             download
             className="flex items-center gap-1.5 rounded-full btn-primary-custom px-3.5 py-1.5 text-xs uppercase tracking-wider font-bold transition-all hover:-translate-y-0.5 font-mono-custom"
           >
@@ -190,7 +190,7 @@ export default function Navbar() {
               {/* Mobile Download Resume */}
               <div className="pt-6 border-cyan-gradient-t">
                 <a
-                  href="/Hassan_Ali_Resume_.pdf"
+                  href="/Hassan_Ali_Resume.pdf"
                   download
                   className="flex items-center justify-center gap-2 rounded-2xl btn-primary-custom px-4 py-3.5 text-center text-xs font-bold uppercase tracking-wider transition-all min-h-[48px] font-mono-custom"
                   onClick={() => setIsOpen(false)}

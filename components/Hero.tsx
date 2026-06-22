@@ -80,7 +80,7 @@ export default function Hero() {
               </button>
               {/* Secondary CTA (outlined, blue border, raised/inset hover) */}
               <a
-                href="/Hassan_Ali_Resume_.pdf"
+                href="/Hassan_Ali_Resume.pdf"
                 download
                 className="flex items-center justify-center gap-2 rounded-full border border-[#023e8a] text-[#00b4d8] hover:bg-[#023e8a]/10 bg-transparent px-6 py-3 text-sm font-semibold shadow-neu-sm hover:shadow-neu-inset transition-all duration-300 w-full sm:w-auto min-h-[44px]"
               >
